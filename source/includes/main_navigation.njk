@@ -1,0 +1,10 @@
+<nav class="navigation{% if template == "home" or template == 'services' %} navigation--reverse{% endif %}" aria-label="Main">
+  <a href="/" class="navigation__sitename" aria-labelledby="sitename">
+      Jon’s website <span class="visually-hidden">homepage</span></span>
+  </a>
+  <ul class="navigation__items">
+      {% for item in navigation.main %}
+        <li><a href="{{ item.url }}"{% if item.id == section_id %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a></li>
+      {% endfor %}
+  </ul>
+</nav>

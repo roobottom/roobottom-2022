@@ -1,0 +1,32 @@
+.clients {
+  list-style: none;
+  display: grid;
+  gap: var(--space-m);
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  
+
+  img {
+    width: 100%;
+  }
+}
+
+@media @bp[min] {
+  .clients {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-l);
+
+    img {
+      max-width: 100%;
+      width: auto;
+    }
+
+    li:nth-child(3n-1) {
+      justify-self: center;
+    }
+
+    li:nth-child(3n) {
+      justify-self: end;
+    }
+  }
+}

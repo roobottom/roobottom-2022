@@ -1,0 +1,18 @@
+---
+eleventyExcludeFromCollections: true
+layout: default
+eleventyComputed:
+  title: "{{ tag.title | title }}"
+permalink: "subjects/{{ tag.title | slugify }}/"
+pagination:
+  data: collections.tags
+  size: 1
+  alias: tag
+---
+<ul class="list contain-indent">
+  {% for article in collections[tag.title] | reverse %}
+    <li class="list-item">
+      {% summary article.url, article.data.title, article.data.introduction, article.date %}
+    </li>
+  {% endfor %}
+</ul>

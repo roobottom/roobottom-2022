@@ -1,0 +1,33 @@
+.meta {
+  color: var(--c-grey-dark);
+  font-size: var(--step--1);
+  display: flex;
+  flex-wrap: wrap;
+
+  dt {
+    font-weight: bold;
+  }
+
+  a {
+    #type.style.link(var(--c-grey-dark));
+  }
+
+  &-item:not(:last-child) {
+    margin-right: var(--space-m);
+    margin-bottom: var(--space-s);
+  }
+
+}
+
+@media @bp[max] {
+  .meta {
+    display: block;
+    float: right;
+    margin-left: var(--space-m);
+    max-width: unit((220/@base),rem);
+
+    &-item:not(:last-child) {
+      margin-right: 0;
+    }
+  }
+}

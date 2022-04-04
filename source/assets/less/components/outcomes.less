@@ -1,0 +1,18 @@
+.outcomes {
+  &-items {
+    display: grid;
+    gap: var(--space-m);
+    .grid-columns(fit);
+  }
+  &-content {
+    //box-shadow: 0 0 10px fade(black, 10%);
+    padding: var(--space-m);
+  }
+
+  &-footnote {
+    padding: var(--space-m);
+    font-size: var(--step--1);
+    >* {#container.line-length;}
+  }
+
+}

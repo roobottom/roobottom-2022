@@ -1,0 +1,20 @@
+{% extends './_wrapper.njk' %}
+
+{% block content %}
+<header aria-labelledby="page-title">
+  <h1 id="page-title" class="space--margin-bottom-l">{{ title }}</h1>
+  <dl class="meta space--margin-bottom-l">
+    <div class="meta-item">
+      <dt>Date</dt>
+      <dd>{{ date | date('DD MMMM YYYY') }}</dd>
+    </div>
+    <div class="meta-item">
+      <dt>Subjects</dt>
+      <dd>{% for tag in tags %}<a href="/subjects/{{ tag | slugify }}">{{ tag | title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>
+    </div>
+  </dl> 
+</header>
+<div class="prose prose--flow">
+  {{ content | safe }}
+</div>
+{% endblock %}

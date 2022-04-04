@@ -1,0 +1,39 @@
+.footer {
+  
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-xl);
+  position: relative;
+  
+
+  &-content {
+    padding-top: var(--space-s);
+    margin-bottom: var(--space-s);
+  }
+
+  &-navigation {
+    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-s);
+
+    li {
+      margin-right: var(--space-s);
+      list-style: none;
+    } 
+
+  }
+
+  a {
+    #type.style.link(black, var(--c-blue));
+    padding: var(--space-xxs);
+  }
+
+  &--reverse {
+    --badge-bg: var(--c-purple);
+  }
+
+  &--reverse a {
+    #type.style.link(white, white);
+  }
+
+}

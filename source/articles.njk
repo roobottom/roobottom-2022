@@ -1,0 +1,13 @@
+---
+title: Articles
+layout: default
+section_id: articles
+eleventyExcludeFromCollections: true
+---
+<ul class="list contain-indent">
+  {% for article in collections.articles %}
+    <li class="list-item">
+      {% summary article.url, article.data.title, article.data.introduction, article.date %}
+    </li>
+  {% endfor %}
+</ul>

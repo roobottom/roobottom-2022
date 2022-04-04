@@ -1,0 +1,306 @@
+//typescales
+#type {
+    .make-typescale-up(@counter: 0) when (@counter <= @typescale-up-steps) {
+        @min: round(pow(@type-min-scale, @counter) * @type-min-size, 2);
+        @max: round(pow(@type-max-scale, @counter) * @type-max-size, 2);
+        :root {
+            --step-@{counter}: calc((unit((@min/@base), rem)) + (@max - @min) *var(--fluid-bp));
+        }
+        #type > .make-typescale-up(@counter + 1); 
+    }
+    .make-typescale-down(@counter: 1) when (@counter <= @typescale-down-steps) {
+        @min: round((@type-min-size / pow(@type-min-scale, @counter)), 2);
+        @max: round((@type-max-size / pow(@type-max-scale, @counter)), 2);
+        :root {
+            --step--@{counter}: calc((unit((@min/@base), rem)) + (@max - @min) *var(--fluid-bp));
+        }
+        #type > .make-typescale-down(@counter + 1);  
+    }
+
+    //translate between any steps within the system:
+    .steps(@minstep, @maxstep) {
+        @min: round(pow(@type-min-scale, @minstep) * @type-min-size, 2);
+        @max: round(pow(@type-max-scale, @maxstep) * @type-max-size, 2);
+        font-size: calc((unit((@min/@base), rem)) + (@max - @min) *var(--fluid-bp));
+    }
+
+    //is this useful? It doesn't respect any scale:
+    .sizes(@min, @max) {
+        font-size: calc((unit((@min/@base), rem)) + (@max - @min) *var(--fluid-bp));
+    }
+}
+#type > .make-typescale-up;
+#type > .make-typescale-down;
+
+#type {
+    .style() {
+        .link(@color: var(--c-link), @focus: var(--c-link), @underline: underline) {
+            color: @color;
+            text-decoration: @underline;
+            padding: var(--space-xxs);
+            margin: calc(-1 * var(--space-xxs));
+            &:hover {
+                text-decoration: underline;
+                text-decoration-thickness: 3px;
+            }
+            &:focus {
+                outline: 2px solid @focus;
+                text-decoration: none;
+                color: @focus;
+            }
+        }
+    }
+    .family() {
+        .sans() {
+            font-family: 'Debut Sans', sans-serif;
+        }
+        .serif() {
+            //font-family: 'Bely Display', serif;
+            font-family: 'PX Grotesk', serif;
+        }
+        .mono() {
+            font-family: 'DM Mono', monospace;
+        }
+    }
+}
+
+
+//font files
+@font-face{
+    font-family: 'Debut Sans'; 
+    src: url('@{path-fonts}test-tiempos-text-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Debut Sans'; 
+    src: url('@{path-fonts}test-tiempos-text-regular-italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face{
+    font-family: 'Debut Sans'; 
+    src: url('@{path-fonts}test-tiempos-text-bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Debut Sans'; 
+    src: url('@{path-fonts}test-tiempos-text-bold-italic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: 'PX Grotesk'; 
+    src: url('@{path-fonts}Px-Grotesk.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
+
+//global typographic settings
+
+body{
+    font-size: var(--step-0);
+    line-height: var(--line-height);
+    #type.family.sans;
+    font-variant-ligatures: common-ligatures;
+}
+
+h1, h2, h3, h4 {
+    line-height: var(--line-height--tight);
+}
+
+h1, .h1 {
+    #type.family.serif;
+    #type.steps(5, 9);
+    font-weight: normal;
+}
+
+h2, .h2 {
+    font-size: var(--step-5);
+    #type.family.serif;
+    font-weight: normal;
+}
+
+h3, .h3 {
+    font-size: var(--step-2);
+    #type.family.serif;
+    font-weight: normal;
+}
+
+h4 {
+    font-size: var(--step-0);
+    #type.family.sans;
+    font-weight: bold;    
+}
+
+code {
+    #type.family.mono;
+    font-size: 90%;
+}
+
+p code {
+    background-color: var(--c-grey-x-light);
+    padding: 0.2em;
+    margin: -0.2em;
+}
+
+pre {
+    padding: var(--space-s);
+    background-color: var(--c-grey-x-light);
+    overflow-x: scroll;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px dashed var(--c-grey-light);
+}
+
+
+//type helper classes
+
+.type {
+    &-lead {
+        font-size: var(--step-1);
+    }
+    &-mega {
+        #type.steps(7, 10);
+        line-height: var(--line-height--supertight);
+    }
+    &-subtitle {
+        font-size: 50%;
+        color: var(--c-grey-light);
+        #type.family.sans;
+        display: block;
+    }
+    &-center {
+        text-align: center;
+    }
+}
+
+//prose
+.prose {
+    //vertical spacing
+    >*+* {
+        margin-top: var(--space-s);
+    }
+
+    >*+h2,
+    .quote,
+    >.quote+* {
+        margin-top: var(--space-xxl);
+    }
+
+    blockquote:not(.quote),
+    >blockquote:not(.quote)+* {
+        margin-top: var(--space-m);
+    }
+
+    >*+h3,
+    >*+h4,
+    .gallery,
+    .gallery+p {
+        margin-top: var(--space-m);
+    }
+    .gallery--left,
+    .gallery--right {
+        margin-top: var(--space-s);
+    }
+    >h3+p,
+    >h4+p {
+        margin-top: var(--space-xs);
+    }
+    >h2+h3,
+    >h2+h4 {
+        margin-top: var(--space-s);
+    }
+
+    li+li:not(.list-item) {
+        margin-top: var(--space-xs);
+    }
+
+    li:not(.list-item) {
+        margin-left: 1em;
+        padding-left: var(--space-xs);
+    }
+
+    ul > li {
+        list-style-image: ~"url(@{path-images}bullet.svg)";
+    }
+
+    a:not(.button) {
+        #type.style.link;
+    }
+
+    blockquote:not(.quote) {
+        border-left: 6px dotted var(--c-grey-light);
+        #type.family.serif;
+        font-size: var(--step-2);
+        line-height: var(--line-height--tight);
+        >p {
+            text-indent: -.5em;
+            padding-left: 1em;
+            @supports (hanging-punctuation: first) {
+                hanging-punctuation: first;
+                text-indent: 0;
+            } 
+        }
+        >p:first-child:before { content: "“";}
+        >p:last-child:after { content: "”";}
+    }
+
+    .button {
+        display: inline-block;
+        border: 3px solid;
+        padding: var(--space-xs);
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            box-shadow: inset 0 0 0 3px black;
+        }
+    }
+
+    //autolayout
+    &--flow {
+        >p,
+        >ul:not(.list),
+        >ol,
+        >table,
+        >h2,>h3,>h4,>h5,>h6,
+        blockquote:not(.quote) {
+            #container.flow;
+        }
+    }
+
+    &--reverse {
+        color: white;
+        a:not(.button) {
+            #type.style.link(white,white); 
+        }
+        ul > li {
+            list-style-image: ~"url(@{path-images}bullet-reverse.svg)"
+        }
+        .button {
+            &:hover,
+            &:focus {
+                box-shadow: inset 0 0 0 3px fade(white, 60%);
+                background-color: fade(white, 10%);
+            }
+        }
+    }
+
+}
+
+@media only screen and (min-width: 750px) { //match .gallery bp
+    .prose {
+        .gallery--left,
+        .gallery--right {
+            margin-top: 0;
+            margin-bottom: var(--space-m); //space right/left images away from others
+        }
+    }
+}

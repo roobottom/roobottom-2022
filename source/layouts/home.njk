@@ -1,0 +1,15 @@
+{% extends './_wrapper.njk' %}
+
+{% block content %}
+
+<h2 class="space--margin-top-xxl">Featured writing</h2>
+<ul class="list list--grid space--margin-top-m">
+  {% for item in collections.work %}
+    {% if item.data.homepage %}
+      <li class="list-item">
+        {% card item.data.title, item.data.introduction, item.url, item.data.cover %}
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+{% endblock %}

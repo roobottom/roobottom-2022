@@ -1,0 +1,34 @@
+.showcase {
+  &-image {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+@media @bp[max] {
+  .showcase {
+
+    display: grid;
+    grid-template-columns: auto minmax(400px, 600px);
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "title image"
+      "content image";
+
+    &-title {
+      grid-area: title;
+      align-self: end;
+    }
+
+    &-image {
+      
+      grid-area: image;
+      align-self: end;
+    }
+
+    &-content {
+      grid-area: content;
+    }
+
+  }
+}

@@ -1,0 +1,32 @@
+---
+title: Contact
+layout: default
+section_id: contact
+eleventyExcludeFromCollections: true
+introduction: Tell me about how I can help you build great products, manage your teams and have more potent ideas.
+---
+<form name="contact" id="form-contact" class="form contain-flow" method="POST" netlify action="/thanks" netlify-honeypot="pot-o-gold">
+
+  <div class="form-group">
+    <label class="form-label" for="name">What’s your name?</label>
+    <div class="form-hint" id="name-hint">So I know what to call you!</div>
+    <input type="text" name="name" id="name" class="form-input " aria-describedby="name-hint" value="">
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" for="email">What’s your email address?</label>
+    <div class="form-hint" id="email-hint">I’ll use your email just to contact you about your project</div>
+    <input type="text" name="email" id="email" class="form-input" aria-describedby="email-hint" value="">
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" for="content">How can I help?</label>
+    <div class="form-hint" id="content-hint">Tell me about your project, budget and timescales.</div>
+    <textarea class="form-input" name="content" id="content" rows="5" aria-describedby="content-hint"></textarea>
+  </div>
+  
+  <input type="text" name="pot-o-gold" class="visually-hidden" tabindex="-1">
+
+  <button class="form-button">Send</button>
+
+</form>
