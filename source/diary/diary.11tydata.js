@@ -2,7 +2,7 @@ const smartypants = require('smartypants')
 const date = require('../../lib/filters/date.js')
 
 module.exports = {
-  layout: 'article.njk',
+  layout: 'diary-item.njk',
   section_id: 'diary',
   eleventyComputed: {
     title: data => { 

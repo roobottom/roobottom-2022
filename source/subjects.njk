@@ -4,7 +4,7 @@ layout: default
 navigation_id: subjects
 eleventyExcludeFromCollections: true
 ---
-<ul class="list list--grid contain-indent">
+<ul class="list list--grid">
   {% for tag in collections.tags %}
     <li class="list-item prose">
       <p><a href="/subjects/{{ tag.title | slugify }}/">{{ tag.title | title }}</a><br>{{ tag.count }} {{ 'item' | plural(tag.count) }}</p>

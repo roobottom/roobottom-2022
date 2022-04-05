@@ -1,0 +1,13 @@
+---
+title: Diary
+layout: default
+section_id: diary
+eleventyExcludeFromCollections: true
+---
+<ul class="list">
+  {% for article in collections.diary %}
+    <li class="list-item">
+      {% summary article.url, article.data.title, article.data.introduction, article.date %}
+    </li>
+  {% endfor %}
+</ul>

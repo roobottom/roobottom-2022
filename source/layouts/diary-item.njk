@@ -5,17 +5,14 @@
   <dl class="meta space--margin-bottom-l">
     <div class="meta-item">
       <dt>Date</dt>
-      <dd>{{ date | date('MMMM YYYY') }}</dd>
-    </div>
-    <div class="meta-item">
-      <dt>Project length</dt>
-      <dd>{{ project_length }}</dd>
+      <dd>{{ date | date('DD MMMM YYYY [at] h:MMa') }}</dd>
     </div>
     <div class="meta-item">
       <dt>Subjects</dt>
       <dd>{% for tag in tags %}<a href="/subjects/{{ tag | slugify }}">{{ tag | title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>
     </div>
-  </dl> 
+  </dl>
+  
   <div class="prose prose--flow space--margin-bottom-l">
     <p class="type-lead">{{ introduction | smartypants | safe }}</p>
   </div>
