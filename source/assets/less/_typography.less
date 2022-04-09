@@ -56,7 +56,7 @@
         }
         .serif() {
             //font-family: 'Bely Display', serif;
-            font-family: 'PX Grotesk', serif;
+            font-family: 'Space Grotesk', serif;
         }
         .mono() {
             font-family: 'DM Mono', monospace;
@@ -91,13 +91,7 @@
     font-style: italic;
 }
 
-@font-face{
-    font-family: 'PX Grotesk'; 
-    src: url('@{path-fonts}Px-Grotesk.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
 
 //global typographic settings
@@ -111,30 +105,29 @@ body{
 
 h1, h2, h3, h4 {
     line-height: var(--line-height--tight);
+    font-feature-settings: 'kern' 1;
+    font-weight: 700;
 }
 
 h1, .h1 {
     #type.family.serif;
     #type.steps(5, 9);
-    font-weight: normal;
+    line-height: var(--line-height--supertight);
 }
 
 h2, .h2 {
-    font-size: var(--step-5);
+    font-size: var(--step-4);
     #type.family.serif;
-    font-weight: normal;
 }
 
 h3, .h3 {
     font-size: var(--step-2);
     #type.family.serif;
-    font-weight: normal;
 }
 
 h4 {
     font-size: var(--step-0);
     #type.family.sans;
-    font-weight: bold;    
 }
 
 code {

@@ -29,32 +29,25 @@ figcaption {
 
 .gallery {
 
-  figure+figure {
-    margin-top: var(--space-m);
-  }
+  // figure+figure {
+  //   margin-top: var(--space-m);
+  // }
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-s);
+  align-items: baseline;
 
   @media @bp[mid] {
 
-    figure+figure {
-      margin-top: 0;
-    }
+    // figure+figure {
+    //   margin-top: 0;
+    // }
 
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-s);
-    align-items: baseline;
+   
   } 
 
-  @media @bp[max] {
-    grid-template-columns: repeat(3, 1fr)
-  }
 
-  &.half {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
 }
