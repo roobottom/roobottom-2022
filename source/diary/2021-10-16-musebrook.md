@@ -5,9 +5,9 @@ tags:
 date: '2021-10-16'
 summary: Musebrook Park
 photo:
-- url: "/images/diary/2021-10-16-b518b380-cb21-4926-a68d-305bb91ffcae.jpeg"
+- url: "/assets/images/diary/2021-10-16-b518b380-cb21-4926-a68d-305bb91ffcae.jpeg"
   alt: We feed the ducks
-- url: "/images/diary/2021-10-16-7a650f9b-a606-4295-8bd8-80fe8bf3dc0f.jpeg"
+- url: "/assets/images/diary/2021-10-16-7a650f9b-a606-4295-8bd8-80fe8bf3dc0f.jpeg"
   alt: Roo and Rootwo enjoy an ice cream at Musebrook Café
 
 ---

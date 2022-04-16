@@ -2,7 +2,7 @@
 tags: []
 date: 2020-09-14
 photo:
-- url: "/images/diary/2020-09-17-beach-huts-goring-gap.jpeg"
+- url: "/assets/images/diary/2020-09-17-beach-huts-goring-gap.jpeg"
   alt: The beach huts at Goring Gap near Worthing, England
 summary: Beers on the beach
 

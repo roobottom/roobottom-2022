@@ -5,13 +5,13 @@ tags:
 date: '2021-10-03'
 summary: A lazy Sunday morning
 photo:
-- url: "/images/diary/2021-10-03-img_4935.jpeg"
+- url: "/assets/images/diary/2021-10-03-img_4935.jpeg"
   alt: Roo and her bike on Littlehampton beach
-- url: "/images/diary/2021-10-03-img_4938.jpeg"
+- url: "/assets/images/diary/2021-10-03-img_4938.jpeg"
   alt: Roo throws a piece of long string-like seaweed towards the camera
-- url: "/images/diary/2021-10-03-img_4939.jpeg"
+- url: "/assets/images/diary/2021-10-03-img_4939.jpeg"
   alt: Roo at work on the beach
-- url: "/images/diary/2021-10-03-img_4942.jpeg"
+- url: "/assets/images/diary/2021-10-03-img_4942.jpeg"
   alt: 'A piece of modern art: Standing stone at Littlehampton beach'
 
 ---

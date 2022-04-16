@@ -5,9 +5,9 @@ tags:
 summary: Winter beach day
 date: 2021-12-30T12:24:00Z
 photo:
-- url: "/images/diary/2021-12-30-img_5467.jpeg"
+- url: "/assets/images/diary/2021-12-30-img_5467.jpeg"
   alt: Roo on Littlehampton beach
-- url: "/images/diary/2021-12-30-img_5471.jpeg"
+- url: "/assets/images/diary/2021-12-30-img_5471.jpeg"
   alt: Roo stands inside a gigantic drawing of a castle we made in the sand
 
 ---

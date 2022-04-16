@@ -4,7 +4,7 @@ tags:
 date: 2005-05-30
 summary: Biking in the Wyre Valley
 photo:
-- url: "/images/diary/2020-09-17-16497932_b8e4ee8b7f_o.jpg"
+- url: "/assets/images/diary/2020-09-17-16497932_b8e4ee8b7f_o.jpg"
   alt: Kris, Paul, Me, Mark and Dave pose with our bikes
 
 ---

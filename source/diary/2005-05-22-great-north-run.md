@@ -4,7 +4,7 @@ tags:
 date: 2005-05-22
 summary: ''
 photo:
-- url: "/images/diary/2020-09-17-15164643_a470a8b446_o.jpg"
+- url: "/assets/images/diary/2020-09-17-15164643_a470a8b446_o.jpg"
   alt: Paul with his medal after completing the Great North Run
 
 ---

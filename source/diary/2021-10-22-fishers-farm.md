@@ -7,16 +7,16 @@ tags:
 date: '2021-10-22'
 summary: A day out at Fishers Farm
 photo:
-- url: "/images/diary/2021-10-24-img_5060.jpeg"
+- url: "/assets/images/diary/2021-10-24-img_5060.jpeg"
   alt: Rootwo enjoying an ice-lolly
-- url: "/images/diary/2021-10-24-img_5064.jpeg"
+- url: "/assets/images/diary/2021-10-24-img_5064.jpeg"
   alt: Rootwo smiling at the camera
-- url: "/images/diary/2021-10-24-img_5048.jpeg"
+- url: "/assets/images/diary/2021-10-24-img_5048.jpeg"
   alt: Roo and Rootwo on the merry-go-round
-- url: "/images/diary/2021-10-24-img_5072.jpeg"
+- url: "/assets/images/diary/2021-10-24-img_5072.jpeg"
   alt: Roo relaxing on a beanbag in the neon-lit sensory room
 - alt: Rootwo smiles after sliding down a big blue slide
-  url: "/images/diary/2021-10-24-img_5057.jpeg"
+  url: "/assets/images/diary/2021-10-24-img_5057.jpeg"
 
 ---
 We had a lovely family day out at Fishers Farm. 

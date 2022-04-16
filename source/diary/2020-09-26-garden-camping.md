@@ -5,7 +5,7 @@ tags:
 date: 2020-09-26
 summary: 'Garden camping '
 photo:
-- url: "/images/diary/2020-09-26-dc51ee55-08cb-459b-9805-0cb97c4a95f5.jpeg"
+- url: "/assets/images/diary/2020-09-26-dc51ee55-08cb-459b-9805-0cb97c4a95f5.jpeg"
   alt: Roo in the tent enjoying a late night snack treat
 
 ---

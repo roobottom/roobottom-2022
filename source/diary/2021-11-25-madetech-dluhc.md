@@ -6,11 +6,11 @@ tags:
   - made tech
   - dluhc
 photo:
-  - url: /images/diary/2021-11-25-madetech-sign.jpeg
+  - url: /assets/images/diary/2021-11-25-madetech-sign.jpeg
     alt: Made Tech's neon sign
-  - url: /images/diary/2021-11-25-sarahs-bag.jpeg
+  - url: /assets/images/diary/2021-11-25-sarahs-bag.jpeg
     alt: Sarah made these lovely little Christmas bags full of chocolate
-  - url: /images/diary/2021-11-25-the-team.jpeg
+  - url: /assets/images/diary/2021-11-25-the-team.jpeg
     alt: The "Log social sales and lettings (CORE)" team 
 ---
 Today was the fist time I've commuted to London for three years. But it all still felt familiar, especially the inefficient, smelly Southern Rail trains. 

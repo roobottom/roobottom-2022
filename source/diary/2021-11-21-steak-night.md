@@ -1,7 +1,7 @@
 ---
 summary: Steak night at Toms
 photo:
-  - url: /images/diary/2021-11-21-steak-night.jpeg
+  - url: /assets/images/diary/2021-11-21-steak-night.jpeg
     alt: Me, Luke and Tom playing a game of Shit Head
 date: 2021-11-21T22:00:00
 tags:

@@ -5,7 +5,7 @@ tags:
 date: '2019-10-01'
 summary: Rootwo is born
 photo:
-- url: "/images/diary/2021-10-15-img_0149.jpeg"
+- url: "/assets/images/diary/2021-10-15-img_0149.jpeg"
   alt: Rootwo on the first day of his life
 
 ---

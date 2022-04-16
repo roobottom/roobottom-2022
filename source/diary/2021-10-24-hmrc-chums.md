@@ -5,7 +5,7 @@ tags:
 date: '2021-10-24'
 summary: Lunch with old HMRC friends
 photo:
-- url: "/images/diary/2021-10-24-photo-2021-10-24-16-50-09.jpg"
+- url: "/assets/images/diary/2021-10-24-photo-2021-10-24-16-50-09.jpg"
   alt: HMRC friends reunited
 
 ---

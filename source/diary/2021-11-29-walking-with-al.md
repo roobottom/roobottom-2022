@@ -5,9 +5,9 @@ tags:
   - friends
   - littlehampton
 photo:
-  - url: /images/diary/2021-11-29-hhhbk.jpg
+  - url: /assets/images/diary/2021-11-29-hhhbk.jpg
     alt: Al taking photos on Littlehampton beach
-  - url: /images/diary/2021-11-29-fod3n.jpg
+  - url: /assets/images/diary/2021-11-29-fod3n.jpg
     alt: "The sun rising over Middlemead, Littlehampton "
 ---
 I’ve been taking Monday morning walks with my friend Al since lockdown one. We chat about all kinds of stuff; it’s a lovely way to start the week. 

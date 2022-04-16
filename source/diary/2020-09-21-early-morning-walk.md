@@ -4,7 +4,7 @@ tags:
 date: 2020-09-21
 summary: Early morning walk
 photo:
-- url: "/images/diary/2020-09-21-early-morning-walk-on-beach.jpeg"
+- url: "/assets/images/diary/2020-09-21-early-morning-walk-on-beach.jpeg"
   alt: Littlehampton beach. The tide is out. Patterns have been left in the sand by
     the sea.
 

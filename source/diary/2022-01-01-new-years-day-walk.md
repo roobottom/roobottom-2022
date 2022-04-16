@@ -6,15 +6,15 @@ tags:
 summary: New Year's Day walk
 date: 2022-01-01T15:07:00Z
 photo:
-- url: "/images/diary/2022-01-01-img_1375.jpeg"
+- url: "/assets/images/diary/2022-01-01-img_1375.jpeg"
   alt: Rootwo leads the pack
-- url: "/images/diary/2022-01-01-img_1402.jpeg"
+- url: "/assets/images/diary/2022-01-01-img_1402.jpeg"
   alt: 'The gang: I''m actually in this one.'
-- url: "/images/diary/2022-01-01-img_1411.jpeg"
+- url: "/assets/images/diary/2022-01-01-img_1411.jpeg"
   alt: The gang, I said "do something silly"
-- url: "/images/diary/2022-01-01-img_1400.jpeg"
+- url: "/assets/images/diary/2022-01-01-img_1400.jpeg"
   alt: Roo, Rootwo and "S"
-- url: "/images/diary/2022-01-01-img_1425.jpeg"
+- url: "/assets/images/diary/2022-01-01-img_1425.jpeg"
   alt: The kids table in a rare moment of peace
 
 ---

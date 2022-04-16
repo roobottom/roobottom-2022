@@ -5,15 +5,15 @@ tags:
 date: '2021-08-24'
 summary: We went to Pepper Pig World
 photo:
-- url: "/images/diary/2021-10-14-img_4608.jpeg"
+- url: "/assets/images/diary/2021-10-14-img_4608.jpeg"
   alt: Roo and Katie pose for a picture
-- url: "/images/diary/2021-10-14-img_6177.jpeg"
+- url: "/assets/images/diary/2021-10-14-img_6177.jpeg"
   alt: Roo pushing me in a wheelchair
-- url: "/images/diary/2021-10-14-img_4616.jpeg"
+- url: "/assets/images/diary/2021-10-14-img_4616.jpeg"
   alt: Roo was brave on the fast snake ride
-- url: "/images/diary/2021-10-14-img_4622.jpeg"
+- url: "/assets/images/diary/2021-10-14-img_4622.jpeg"
   alt: 'Roo on the carrousel '
-- url: "/images/diary/2021-10-14-img_4632.jpeg"
+- url: "/assets/images/diary/2021-10-14-img_4632.jpeg"
   alt: Roo and I on the dino explorer ride
 
 ---

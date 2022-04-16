@@ -6,13 +6,13 @@ tags:
   - roo
   - rootwo
 photo:
-  - url: /images/diary/2021-12-04-IMG_1047.jpg
+  - url: /assets/images/diary/2021-12-04-IMG_1047.jpg
     alt: Rootwo dressed as a snowman
-  - url: /images/diary/2021-12-04-IMG_1054.jpg
+  - url: /assets/images/diary/2021-12-04-IMG_1054.jpg
     alt: Roo, in a elf hat, by the Christmas tree
-  - url: /images/diary/2021-12-05-tree-setup.jpeg
+  - url: /assets/images/diary/2021-12-05-tree-setup.jpeg
     alt: The kids get stuck in to decorating the tree
-  - url: /images/diary/2021-12-04-tree-posing.jpeg
+  - url: /assets/images/diary/2021-12-04-tree-posing.jpeg
     alt: The kids pose by the tree
 ---
 It's probably the earliest we've ever done it, but we put up the Christmas tree. Roo loved it and was actually quite helpful. Rootwo insisted on taking everything off that we'd just put on. 

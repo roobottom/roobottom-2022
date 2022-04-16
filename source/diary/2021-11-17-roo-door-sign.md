@@ -1,7 +1,7 @@
 ---
 summary: Only girls and unicorns allowed in
 photo:
-  - url: /images/diary/2021-11-17-only-girls-allowed.jpeg
+  - url: /assets/images/diary/2021-11-17-only-girls-allowed.jpeg
     alt: A sign on Roo’s door reads “Only girls and unicorns allowed in (and my brother) (and puppies)”
 tags:
   - roo

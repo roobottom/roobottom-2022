@@ -5,13 +5,13 @@ tags:
 date: 2020-10-01
 summary: 'A year of Rootwo '
 photo:
-- url: "/images/diary/2020-10-03-e7215639-ae19-44da-848e-eacda7f6fcf8.jpeg"
+- url: "/assets/images/diary/2020-10-03-e7215639-ae19-44da-848e-eacda7f6fcf8.jpeg"
   alt: Roo opens Rootwo’s gifts as he looks on
-- url: "/images/diary/2020-10-03-4f7d93a8-43cb-4850-bde1-e6b86b90ac11.jpeg"
+- url: "/assets/images/diary/2020-10-03-4f7d93a8-43cb-4850-bde1-e6b86b90ac11.jpeg"
   alt: Rootwo sitting under the wooden castle play equipment at the Aldingbourne Trust
-- url: "/images/diary/2020-10-03-6f8f36aa-892e-42b8-a2fa-ca597ac1ca11.jpeg"
+- url: "/assets/images/diary/2020-10-03-6f8f36aa-892e-42b8-a2fa-ca597ac1ca11.jpeg"
   alt: Rootwo at Pizza Express in Arundel
-- url: "/images/diary/2020-10-03-b4c94f58-916b-4dd8-aac1-8da1845e4726.jpeg"
+- url: "/assets/images/diary/2020-10-03-b4c94f58-916b-4dd8-aac1-8da1845e4726.jpeg"
   alt: Rootwo trying out his new scuttle bug
 
 ---

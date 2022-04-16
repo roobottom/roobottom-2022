@@ -7,11 +7,11 @@ tags:
 summary: Christmas Day
 date: 2021-12-25T14:00:00Z
 photo:
-- url: "/images/diary/2021-12-27-9779bd50-b2b0-4275-b2ec-73827ba90d83.jpeg"
+- url: "/assets/images/diary/2021-12-27-9779bd50-b2b0-4275-b2ec-73827ba90d83.jpeg"
   alt: 'Roo express her excitement for Christmas '
-- url: "/images/diary/2021-12-27-38c58763-434a-40fb-afd7-3b499fc4ab2f.jpeg"
+- url: "/assets/images/diary/2021-12-27-38c58763-434a-40fb-afd7-3b499fc4ab2f.jpeg"
   alt: My Dad is delighted with Roo’s school photo
-- url: "/images/diary/2021-12-26-img_1355.jpeg"
+- url: "/assets/images/diary/2021-12-26-img_1355.jpeg"
   alt: 'Rootwo enjoying his Christmas dinner while Katie resizes his cracker hat. '
 
 ---

@@ -2,7 +2,7 @@
 date: 2006-05-25
 summary: New Trinity Design team photo
 photo:
-  - url: /images/diary/2006-05-25-156476440_33f017208d_o.jpg
+  - url: /assets/images/diary/2006-05-25-156476440_33f017208d_o.jpg
     alt: "From left to right: Simon, Paul, me and Neil. We're standing in front of a sign that reads “Welcome to Staffordshire, the creative county”."
 tags:
   - work

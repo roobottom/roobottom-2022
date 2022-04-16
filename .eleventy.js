@@ -2,6 +2,7 @@ const markdownIt = require("markdown-it")
 const markdownItAttrs = require("markdown-it-attrs")
 const markdownItAnchor = require("markdown-it-anchor")
 const markdownItDiv = require("markdown-it-div")
+const markdownItAbbr = require("markdown-it-abbr")
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setBrowserSyncConfig({
@@ -17,6 +18,7 @@ module.exports = function(eleventyConfig) {
             .use(markdownItAttrs)
             .use(markdownItAnchor)
             .use(markdownItDiv)
+            .use(markdownItAbbr)
 
   //11ty md eleventyConfig
   eleventyConfig.setLibrary("md", md)

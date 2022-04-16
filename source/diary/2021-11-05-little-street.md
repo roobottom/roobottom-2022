@@ -5,9 +5,9 @@ tags:
 date: '2021-11-05'
 summary: Rootwo finally got his 2nd birthday party
 photo:
-- url: "/images/diary/2021-11-08-642d7f6a-c17c-4df5-9856-f267b8cdf173.jpeg"
+- url: "/assets/images/diary/2021-11-08-642d7f6a-c17c-4df5-9856-f267b8cdf173.jpeg"
   alt: Roo dressed as a doctor
-- url: "/images/diary/2021-11-08-af420605-1dd2-4a0c-8883-d22ab3c4f01f.jpeg"
+- url: "/assets/images/diary/2021-11-08-af420605-1dd2-4a0c-8883-d22ab3c4f01f.jpeg"
   alt: Rootwo at the checkout
 
 ---

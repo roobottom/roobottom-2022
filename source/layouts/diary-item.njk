@@ -1,23 +1,23 @@
 {% extends './_wrapper.njk' %}
 
 {% block content %}
-<header>
-  <dl class="meta space--margin-bottom-l">
-    <div class="meta-item">
-      <dt>Date</dt>
-      <dd>{{ date | date('DD MMMM YYYY [at] h:MMa') }}</dd>
-    </div>
-    <div class="meta-item">
-      <dt>Subjects</dt>
-      <dd>{% for tag in tags %}<a href="/subjects/{{ tag | slugify }}">{{ tag | title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>
-    </div>
-  </dl>
-  
-  <div class="prose prose--flow space--margin-bottom-l">
-    <p class="type-lead">{{ introduction | smartypants | safe }}</p>
+
+<dl class="meta space--margin-bottom-l">
+  <div class="meta-item">
+    <dt>Date</dt>
+    <dd>{{ date | date('DD MMMM YYYY [at] h:MMa') }}</dd>
   </div>
-</header>
+  {% if tags %}
+  <div class="meta-item">
+    <dt>Subjects</dt>
+    <dd>{% for tag in tags %}<a href="/subjects/{{ tag | slugify }}">{{ tag | title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>
+  </div>
+  {% endif %}
+</dl>
 <div class="prose prose--flow">
   {{ content | safe }}
+  {% for image in photo %}
+    {% figure image.url, image.alt, ['contain-line-length'] %}
+  {% endfor %}
 </div>
 {% endblock %}

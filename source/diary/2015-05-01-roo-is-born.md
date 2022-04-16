@@ -5,7 +5,7 @@ tags:
 date: '2015-05-01'
 summary: Roo is born
 photo:
-- url: "/images/diary/2021-10-15-20446743924_c383caf530_o.jpeg"
+- url: "/assets/images/diary/2021-10-15-20446743924_c383caf530_o.jpeg"
   alt: My little Roo on the first day of her life
 
 ---
