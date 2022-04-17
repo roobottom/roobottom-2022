@@ -17,7 +17,7 @@
 <div class="prose prose--flow">
   {{ content | safe }}
   {% for image in photo %}
-    {% figure image.url, image.alt, ['contain-line-length'] %}
+    {% figure image.url, image.alt %}
   {% endfor %}
 </div>
 {% endblock %}

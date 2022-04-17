@@ -51,15 +51,15 @@
         }
     }
     .family() {
-        .sans() {
-            font-family: 'Debut Sans', sans-serif;
+        .default() {
+            font-family: 'Tiempos', sans-serif;
         }
-        .serif() {
+        .headline() {
             //font-family: 'Bely Display', serif;
-            font-family: 'Space Grotesk', serif;
+            font-family: 'Tiempos Fine', serif;
         }
-        .mono() {
-            font-family: 'DM Mono', monospace;
+        .alt() {
+            font-family: 'Space Grotesk', sans-serif;
         }
     }
 }
@@ -67,71 +67,82 @@
 
 //font files
 @font-face{
-    font-family: 'Debut Sans'; 
+    font-family: 'Tiempos'; 
     src: url('@{path-fonts}test-tiempos-text-regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 @font-face{
-    font-family: 'Debut Sans'; 
+    font-family: 'Tiempos'; 
     src: url('@{path-fonts}test-tiempos-text-regular-italic.woff2') format('woff2');
     font-weight: normal;
     font-style: italic;
 }
 @font-face{
-    font-family: 'Debut Sans'; 
+    font-family: 'Tiempos'; 
     src: url('@{path-fonts}test-tiempos-text-bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
 }
 @font-face{
-    font-family: 'Debut Sans'; 
+    font-family: 'Tiempos'; 
     src: url('@{path-fonts}test-tiempos-text-bold-italic.woff2') format('woff2');
     font-weight: bold;
     font-style: italic;
 }
 
+@font-face{
+    font-family: 'Tiempos Fine'; 
+    src: url('@{path-fonts}test-tiempos-fine-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Tiempos Fine'; 
+    src: url('@{path-fonts}test-tiempos-fine-black.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
 
 //global typographic settings
 
 body{
     font-size: var(--step-0);
     line-height: var(--line-height);
-    #type.family.sans;
+    #type.family.default;
     font-variant-ligatures: common-ligatures;
 }
 
 h1, h2, h3, h4 {
     line-height: var(--line-height--tight);
     font-feature-settings: 'kern' 1;
-    font-weight: 700;
+    font-weight: bold;
+    #type.family.headline;
 }
 
 h1, .h1 {
-    #type.family.serif;
-    #type.steps(5, 9);
+    #type.steps(5, 10);
     line-height: var(--line-height--supertight);
+    overflow-wrap: break-word;
 }
 
 h2, .h2 {
     font-size: var(--step-4);
-    #type.family.serif;
 }
 
 h3, .h3 {
     font-size: var(--step-2);
-    #type.family.serif;
 }
 
 h4 {
     font-size: var(--step-0);
-    #type.family.sans;
 }
 
 code {
-    #type.family.mono;
+    #type.family.alt;
     font-size: 90%;
 }
 
@@ -166,7 +177,7 @@ hr {
     &-subtitle {
         font-size: 50%;
         color: var(--c-grey-light);
-        #type.family.sans;
+        #type.family.default;
         display: block;
     }
     &-center {
@@ -195,7 +206,8 @@ hr {
     >*+h3,
     >*+h4,
     .gallery,
-    .gallery+p {
+    .gallery+p,
+    >figure {
         margin-top: var(--space-m);
     }
     .gallery--left,
@@ -230,7 +242,7 @@ hr {
 
     blockquote:not(.quote) {
         border-left: 6px dotted var(--c-grey-light);
-        #type.family.serif;
+        #type.family.headline;
         font-size: var(--step-2);
         line-height: var(--line-height--tight);
         >p {
@@ -264,7 +276,8 @@ hr {
         >ol,
         >table,
         >h2,>h3,>h4,>h5,>h6,
-        blockquote:not(.quote) {
+        blockquote:not(.quote),
+        >figure:not(.wide):not(.full) {
             #container.flow;
         }
     }

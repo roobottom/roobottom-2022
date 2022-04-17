@@ -1,3 +1,4 @@
+require('dotenv').config()
 const markdownIt = require("markdown-it")
 const markdownItAttrs = require("markdown-it-attrs")
 const markdownItAnchor = require("markdown-it-anchor")

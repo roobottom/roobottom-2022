@@ -8,8 +8,6 @@ img {
 }
 
 figure {
-  // margin-left: auto;
-  // margin-right: auto;
   >img {
     width: 100%;
   }
@@ -22,32 +20,15 @@ figcaption {
   font-size: var(--step--2);
   margin-top: var(--space-xs);
   color: var(--c-grey-dark);
-  #type.family.serif;
+  #type.family.alt;
+  #container.flow;
 }
 
 //** galleries
 
 .gallery {
-
-  // figure+figure {
-  //   margin-top: var(--space-m);
-  // }
-
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: var(--line-length) 1fr;
   gap: var(--space-s);
   align-items: baseline;
-
-  @media @bp[mid] {
-
-    // figure+figure {
-    //   margin-top: 0;
-    // }
-
-
-   
-  } 
-
-
-
 }

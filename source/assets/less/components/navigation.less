@@ -5,6 +5,14 @@
     align-items: flex-start;
     margin-top: var(--space-m);
     #space > .range(margin-bottom, m, xl);
+    #type.family.headline;
+
+    &__sitename {
+        #type.style.link(black, var(--c-blue), none);
+        font-size: var(--step-1);
+        line-height: var(--line-height--supertight);
+        flex: 0;
+    }
 
     li {
         list-style: none;
@@ -14,12 +22,6 @@
     &__items a {
         #type.style.link(black, var(--c-blue));
         padding: var(--space-xxs);
-    }
-
-    &__sitename {
-        #type.style.link(black, var(--c-blue), none);
-        //margin-left: var(--space-xs);
-        font-weight: bold;
     }
 
     .active {

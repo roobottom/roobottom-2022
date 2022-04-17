@@ -17,6 +17,7 @@
     "@11ty/eleventy": "^1.0.0",
     "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
+    "dotenv": "^16.0.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-less": "^5.0.0",
