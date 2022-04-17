@@ -2,12 +2,15 @@
 
 {% block content %}
 
-<h2 class="space--margin-top-xxl">Featured writing</h2>
+<div class="prose prose--flow space--margin-top-xxl">
+  <h2 id="featured-writing">Featured writing</h2>
+  <p>Here’s a some of my favourite things I’ve written.</p>
+</div>
 <ul class="list list--grid space--margin-top-m">
-  {% for item in collections.work %}
-    {% if item.data.homepage %}
+  {% for item in collections.articles %}
+    {% if item.data.featured %}
       <li class="list-item">
-        {% card item.data.title, item.data.introduction, item.url, item.data.cover %}
+        {% card item.data.title, item.templateContent | firstSentence, item.url, item.data.cover %}
       </li>
     {% endif %}
   {% endfor %}
