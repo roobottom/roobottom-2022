@@ -3,11 +3,21 @@ title: Diary
 layout: default
 section_id: diary
 eleventyExcludeFromCollections: true
+pagination:
+  data: collections.diary
+  size: 50
+  alias: items
 ---
-<ul class="list">
-  {% for article in collections.diary %}
+<ul class="list list--grid">
+  {% for item in items %}
     <li class="list-item">
-      {% summary article.url, article.data.title, article.data.introduction, article.date %}
+      {% card 
+        item.data.title, 
+        item.url, 
+        item.data.cover or item.data.photo[0].url, 
+        item.date | date('ddd D MMMM YYYY, hh:mm a'),
+        item.data.photo | length + ' images' if item.data.photo | length > 1
+      %}
     </li>
   {% endfor %}
 </ul>

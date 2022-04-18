@@ -10,7 +10,7 @@
   {% for item in collections.articles %}
     {% if item.data.featured %}
       <li class="list-item">
-        {% card item.data.title, item.templateContent | firstSentence, item.url, item.data.cover %}
+        {% card item.data.title, item.url, item.data.cover, item.date | date %}
       </li>
     {% endif %}
   {% endfor %}
