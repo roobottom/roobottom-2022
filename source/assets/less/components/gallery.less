@@ -27,8 +27,18 @@ figcaption {
 //** galleries
 
 .gallery {
-  display: grid;
-  grid-template-columns: var(--line-length) 1fr;
-  gap: var(--space-s);
-  align-items: baseline;
+  >figure { 
+    max-width: var(--line-length);
+  }
+
+  >figure+figure {
+    margin-top: var(--space-m);
+  }
+
+  @media @bp[max] {
+    display: grid;
+    grid-template-columns: var(--line-length) 1fr;
+    gap: var(--space-s);
+    align-items: baseline;
+  }
 }

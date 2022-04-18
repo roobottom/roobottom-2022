@@ -51,6 +51,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("articles", require('./lib/collections/articles.js'))
   eleventyConfig.addCollection("diary", require('./lib/collections/diary.js'))
 
+  //archive helper collections
+  eleventyConfig.addCollection("years", require('./lib/collections/years.js'))
+
   return {
     templateFormats: ['njk','md'],
     dir: {
