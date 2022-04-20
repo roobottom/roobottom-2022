@@ -8,16 +8,18 @@ pagination:
   size: 50
   alias: items
 ---
+{% from './includes/card.njk' import card as card %}
+
 <ul class="list list--grid">
   {% for item in items %}
     <li class="list-item">
-      {% card 
-        item.data.title, 
-        item.url, 
-        item.data.cover or item.data.photo[0].url, 
-        item.date | date('ddd D MMMM YYYY, hh:mm a'),
-        item.data.photo | length + ' images' if item.data.photo | length > 1
-      %}
+      {{ card({
+        title: item.data.title,
+        url: item.url,
+        cover: item.data.cover or item.data.photo[0].url,
+        date: item.date | date('ddd D MMMM YYYY, h:mm a'),
+        badge: item.data.photo | length + ' images' if item.data.photo | length > 1
+      }) }}
     </li>
   {% endfor %}
 </ul>

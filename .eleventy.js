@@ -37,6 +37,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("plural", require('./lib/filters/plural.js'))
   eleventyConfig.addFilter("smartypants", require('./lib/filters/smartypants.js'))
   eleventyConfig.addFilter("firstSentence", require('./lib/filters/first-sentence.js'))
+  eleventyConfig.addFilter("transform", require('./lib/filters/image-transform.js'))
 
   //shortcodes (AKA components)
   eleventyConfig.addShortcode("gallery", require('./lib/shortcodes/gallery.js'))

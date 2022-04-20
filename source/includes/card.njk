@@ -1,0 +1,19 @@
+{% macro cover(url) %}
+{% if url %}style="--cover: url('{{ url | transform('card') }}');"{% endif %}
+{% endmacro %}
+
+{% macro date(date) %}
+{% if date %}<div class="card-date">{{ date }}</div>{% endif %}
+{% endmacro %}
+
+{% macro badge(content) %}
+{% if content %}<div class="card-badge" aria-hidden="true">{{ content }}</div>{% endif %}
+{% endmacro %}
+
+{% macro card(params) %}
+<article class="card" {{ cover(params.cover) }}>
+  <header class="card-cover">{{ badge(params.badge) }}</header>
+  <h2 class="card-title"><a href="{{ params.url }}" class="card-link">{{ params.title }}</a></h2>
+  {{ date(params.date) }}
+</article>
+{% endmacro %}
