@@ -4,13 +4,19 @@ layout: default
 section_id: articles
 eleventyExcludeFromCollections: true
 ---
+{% from './includes/summary.njk' import summary as summary %}
 {% for year in collections.years.articles %}
   <h2 id="{{ year }}" class="space--margin-bottom-m">{{ year }}</h2>
   <ul class="list">
     {% for article in collections.articles %}
       {% if article.date | date('YYYY') == year %}
       <li class="list-item">
-        {% summary article.url, article.data.title, article.data.introduction or article.templateContent | striptags | firstSentence, article.date %}
+        {{ summary({
+          title: article.data.title,
+          url: article.url,
+          content: article.data.introduction or article.templateContent | striptags | firstSentence,
+          date: article.date | date('ddd D MMMM YYYY')
+        }) }}
       </li>
       {% endif %}
     {% endfor %}

@@ -1,0 +1,24 @@
+{% macro content(markdown) %}
+{% if markdown %}<div class="summary-content prose">{{ markdown | smartypants }}</div>{% endif %}
+{% endmacro %}
+
+{% macro date(datetime) %}
+{% if datetime %}<div class="summary-date">{{ datetime }}</div>{% endif %}
+{% endmacro %}
+
+{% macro meta(items) %}
+{% if items %}
+{% for item in items %}<span class="summary-meta">{{ item.key or '' }}{{ ': ' if item.key }}{{ item.value | safe }}</span>{% endfor %}
+{% endif %}
+{% endmacro %}
+
+{% macro summary(params) %}
+<article class="summary">
+  <header class="summary-title"><a href="{{ params.url }}" class="summary-link">{{ params.title }}</a></header>
+    {{ content(params.content) }}
+  <footer class="summary-footer">
+    {{ date(params.date) }}
+    {{ meta(params.meta) }}
+  </footer>
+</article>
+{% endmacro %}

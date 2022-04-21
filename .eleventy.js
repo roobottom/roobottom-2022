@@ -44,7 +44,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addShortcode("outcomes", require('./lib/shortcodes/outcomes.js'))
   eleventyConfig.addShortcode("card", require('./lib/shortcodes/card.js'))
   eleventyConfig.addShortcode("quote", require('./lib/shortcodes/quote.js'))
-  eleventyConfig.addShortcode("summary", require('./lib/shortcodes/summary.js'))
   eleventyConfig.addShortcode("figure", require('./lib/shortcodes/figure.js'))
 
   //collections
