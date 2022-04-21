@@ -23,3 +23,13 @@ pagination:
     </li>
   {% endfor %}
 </ul>
+
+<nav aria-labelledby="pages">
+  <h2 class="pages">Explore posts in the diary</h2>
+  <ul>
+  {% for i in range(0, pagination.pages | length) %}
+    {% set numberOfPostOnThisPage = pagination.pages[i] | length - 1 %}
+    <li><a href="{{ pagination.hrefs[i] }}"{% if page.url == pagination.hrefs[i] %} aria-current="page"{% endif %}>From  {{ pagination.pages[i][0].date | date }} until {{ pagination.pages[i][numberOfPostOnThisPage].date | date }}</a></li>
+  {% endfor %}
+  </ul>
+</nav>
