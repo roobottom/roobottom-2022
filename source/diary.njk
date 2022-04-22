@@ -3,33 +3,54 @@ title: Diary
 layout: default
 section_id: diary
 eleventyExcludeFromCollections: true
-pagination:
-  data: collections.diary
-  size: 50
-  alias: items
 ---
 {% from './includes/card.njk' import card as card %}
+{% from './includes/summary.njk' import summary as summary %}
 
-<ul class="list list--grid">
-  {% for item in items %}
+<div class="prose prose--flow space--margin-bottom-xl">
+<p class="type-lead">Short diary-like posts about my life.</p>
+</div>
+
+<h2 class="space--margin-bottom-m">Most recent posts</h2>
+<ul class="list list--grid space--margin-bottom-xl">
+  {% for i in range(0,6) %}
+    {% set item = collections.diary[i] %}
     <li class="list-item">
       {{ card({
         title: item.data.title,
         url: item.url,
         cover: item.data.cover or item.data.photo[0].url,
-        date: item.date | date('ddd D MMMM YYYY, h:mm a'),
+        date: item.date | date('dddd D MMMM YYYY [at] h:mm a'),
         badge: item.data.photo | length + ' images' if item.data.photo | length > 1
       }) }}
     </li>
   {% endfor %}
 </ul>
 
-<nav aria-labelledby="pages">
-  <h2 class="pages">Explore posts in the diary</h2>
+<h2 class="space--margin-bottom-m">Older posts</h2>
+<ul class="list">
+  {% for i in range(0,collections.diary | length) %}
+    {% set item = collections.diary[i] %}
+    <li class="list-item">
+      {{ summary({
+        title: item.data.title,
+        url: item.url,
+        date: item.date | date('dddd D MMMM YYYY [at] h:mm a'),
+        meta: [{
+          key: 'Images',
+          value: item.data.photo | length
+        }]
+      }) }}
+    </li>
+  {% endfor %}
+</ul>
+
+{# <nav aria-labelledby="diary-pages" class="prose prose--flow">
+  <h2 id="diary-pages" class="h3">Explore posts in the diary</h2>
   <ul>
   {% for i in range(0, pagination.pages | length) %}
     {% set numberOfPostOnThisPage = pagination.pages[i] | length - 1 %}
     <li><a href="{{ pagination.hrefs[i] }}"{% if page.url == pagination.hrefs[i] %} aria-current="page"{% endif %}>From  {{ pagination.pages[i][0].date | date }} until {{ pagination.pages[i][numberOfPostOnThisPage].date | date }}</a></li>
   {% endfor %}
   </ul>
-</nav>
+</nav> #}

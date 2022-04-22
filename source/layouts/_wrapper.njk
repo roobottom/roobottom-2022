@@ -45,15 +45,6 @@
                 </ul>
             </nav>
 
-            <h4 class="footer-title" id="explore-this-site-by-subject">Explore this site by subject</h4>
-            <nav aria-labelledby="explore-this-site-by-subject">
-                <ul class="footer-navigation">
-                    {% for tag in collections.tags %}
-                        <li><a href="/subjects/{{ tag.title | slugify }}">{{ tag.title | title }}</a></li>
-                    {% endfor %}
-                </ul>
-            </nav>
-
         </footer>
         <script src="{{ global.cdn }}prismjs@v1.x/components/prism-core.min.js"></script>
 	    <script src="{{ global.cdn }}prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
