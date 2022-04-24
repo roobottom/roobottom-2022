@@ -1,19 +1,25 @@
 {% extends './_wrapper.njk' %}
+{% from '../includes/meta.njk' import meta as meta %}
+{% from '../includes/subjects.njk' import subjects as subjects %}
+{% from '../includes/title.njk' import title as pagetitle %}
 
 {% block content %}
-<header aria-labelledby="page-title">
-  <h1 id="page-title" class="space--margin-bottom-l">{{ title }}</h1>
-  <dl class="meta space--margin-bottom-l">
-    <div class="meta-item">
-      <dt>Date</dt>
-      <dd>{{ date | date('dddd D MMMM YYYY') }}</dd>
-    </div>
-    <div class="meta-item">
-      <dt>Subjects</dt>
-      <dd>{% for tag in tags %}<a href="/subjects/{{ tag | slugify }}">{{ tag | title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>
-    </div>
-  </dl> 
-</header>
+{{ pagetitle({
+  classes: 'space--margin-bottom-l',
+  text: title
+}) }}
+{{ meta({
+  classes: 'space--margin-bottom-l',
+  items: [
+    {
+      key: 'Date',
+      value: date | date('dddd D MMMM YYYY')
+    }, {
+      key: 'Subjects',
+      value: subjects(tags)
+    } if tags
+  ]
+}) }}
 <div class="prose prose--flow">
   {{ content | safe }}
 </div>

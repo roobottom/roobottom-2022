@@ -1,19 +1,20 @@
 {% extends './_wrapper.njk' %}
+{% from '../includes/meta.njk' import meta as meta %}
+{% from '../includes/subjects.njk' import subjects as subjects %}
 
 {% block content %}
-
-<dl class="meta space--margin-bottom-l">
-  <div class="meta-item">
-    <dt>Date</dt>
-    <dd>{{ date | date('dddd D MMMM YYYY [at] h:MM a') }}</dd>
-  </div>
-  {% if tags %}
-  <div class="meta-item">
-    <dt>Subjects</dt>
-    <dd>{% for tag in tags %}<a href="/subjects/{{ tag | slugify }}">{{ tag | title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>
-  </div>
-  {% endif %}
-</dl>
+{{ meta({
+  classes: 'space--margin-bottom-l',
+  items: [
+    {
+      key: 'Date',
+      value: date | date('dddd D MMMM YYYY [at] h:MM a')
+    }, {
+      key: 'Subjects',
+      value: subjects(tags)
+    } if tags | length > 0
+  ]
+}) }}
 <div class="prose prose--flow">
   {{ content | safe }}
   {% for image in photo %}

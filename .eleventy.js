@@ -4,6 +4,8 @@ const markdownItAttrs = require("markdown-it-attrs")
 const markdownItAnchor = require("markdown-it-anchor")
 const markdownItDiv = require("markdown-it-div")
 const markdownItAbbr = require("markdown-it-abbr")
+const moment = require("moment")
+const _ = require('lodash')
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setBrowserSyncConfig({
@@ -33,7 +35,6 @@ module.exports = function(eleventyConfig) {
 
   //filters
   eleventyConfig.addFilter("date", require('./lib/filters/date.js'))
-  eleventyConfig.addFilter("slugify", require('./lib/filters/slugify.js'))
   eleventyConfig.addFilter("plural", require('./lib/filters/plural.js'))
   eleventyConfig.addFilter("smartypants", require('./lib/filters/smartypants.js'))
   eleventyConfig.addFilter("firstSentence", require('./lib/filters/first-sentence.js'))
@@ -53,6 +54,44 @@ module.exports = function(eleventyConfig) {
 
   //archive helper collections
   eleventyConfig.addCollection("years", require('./lib/collections/years.js'))
+
+  //diary archives
+  const makeDiaryArchive = (posts) => {
+    
+    //create a unique array of every possible month
+    let allMonths = []
+    for (let post of posts) {
+      allMonths.push({
+        id: moment(post.date).format('YYYY-MM'),
+        year: moment(post.date).format('YYYY'),
+        title: moment(post.date).format('MMMM YYYY'),
+        posts: []
+      })
+    }
+    let months = _.uniqBy(allMonths, 'id')
+
+    //now populate the months with data
+    for (let post of posts) {
+      let targetObject = _.find(months, obj => {
+        return obj.id == moment(post.date).format('YYYY-MM')
+      })
+      targetObject.posts.push(post)
+    }
+
+    //now enhance the months object
+    for (let item of months) {
+      item.count = item.posts.length
+    }
+
+    return months
+  }
+
+  eleventyConfig.addCollection("diaryArchive", collectionApi => {
+    const diaryPosts = collectionApi.getFilteredByGlob("./source/diary/*.md").sort((a, b) => {
+      return b.date - a.date
+    })
+    return makeDiaryArchive(diaryPosts)
+  })
 
   return {
     templateFormats: ['njk','md'],

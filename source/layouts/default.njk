@@ -1,13 +1,15 @@
 {% extends './_wrapper.njk' %}
+{% from '../includes/title.njk' import title as pagetitle %}
 
 {% block content %}
-<header aria-labelledby="page-title">
-    <h1 id="page-title" class="space--margin-bottom-l">{{ title }}</h1>
-    {% if introduction %}
-    <div class="prose prose--flow space--margin-bottom-l">
-        <p class="type-lead">{{ introduction }}</p>
-    </div>
-    {% endif %}
-</header>
+{{ pagetitle({
+  classes: 'space--margin-bottom-l',
+  text: title
+}) if title }}
+{% if introduction %}
+<div class="prose prose--flow space--margin-bottom-l">
+<p class="type-lead">{{ introduction }}</p>
+</div>
+{% endif %}
 {{ content | safe }}
 {% endblock %}

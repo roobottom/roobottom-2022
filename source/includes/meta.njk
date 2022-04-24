@@ -1,0 +1,10 @@
+{% macro meta(params) %}
+<dl class="meta {{ params.classes }}">
+  {% for item in params.items %}
+  <div class="meta-item">
+    <dt>{{ item.key }}</dt>
+    <dd>{{ item.value | safe }}</dd>
+  </div>
+  {% endfor %}
+</dl> 
+{% endmacro %}
