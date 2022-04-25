@@ -1,8 +1,13 @@
 {% extends './_wrapper.njk' %}
 {% from '../includes/meta.njk' import meta as meta %}
 {% from '../includes/subjects.njk' import subjects as subjects %}
+{% from '../includes/breadcrumbs.njk' import breadcrumbs as breadcrumbsList %}
 
 {% block content %}
+{{ breadcrumbsList({
+  classes: 'space--margin-bottom-s',
+  items: breadcrumbs
+}) }}
 {{ meta({
   classes: 'space--margin-bottom-l',
   items: [

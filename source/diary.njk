@@ -21,11 +21,16 @@ introduction: A collection of short posts about the day-to-day life of my family
     </li>
   {% endfor %}
 </ul>
-<h2 class="space--margin-bottom-m">Explore the diary archives</h2>
-<ul class="list list--grid">
-  {% for yearMonth in collections.diaryArchive %}
+<h2 class="space--margin-bottom-m">Diary archives</h2>
+{% for year in collections.years.diary %}
+<h3 id="{{ year }}" class="space--margin-bottom-s">{{ year }}</h2>
+<ul class="list list--grid space--margin-bottom-xl">
+{% for yearMonth in collections.diaryArchive %}
+  {% if yearMonth.year == year %}
   <li class="list-item prose">
-    <p><a href="/diary/{{ yearMonth.title | lower | slugify }}">{{ yearMonth.title }}</a><br>{{ yearMonth.count }} {{ 'item' | plural(yearMonth.count) }}</p>
+    <p><a href="/diary/{{ yearMonth.title | lower | slugify }}">{{ yearMonth.title }}</a><br>{{ yearMonth.count }} {{ 'post' | plural(yearMonth.count) }}</p>
   </li>
-  {% endfor %}
+  {% endif %}
+{% endfor %}
 </ul>
+{% endfor %}

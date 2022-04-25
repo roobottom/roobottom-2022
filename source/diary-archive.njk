@@ -9,9 +9,13 @@ pagination:
   size: 1
   alias: monthYear
 permalink: "diary/{{ monthYear.title | lower | slugify }}/index.html"
+breadcrumbs:
+  - title: Home
+    url: /
+  - title: Diary
+    url: /diary/
 ---
 {% from './includes/card.njk' import card as card %}
-
 <ul class="list list--grid space--margin-bottom-xl">
   {% for item in monthYear.posts %}
     <li class="list-item">

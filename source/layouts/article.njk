@@ -2,8 +2,13 @@
 {% from '../includes/meta.njk' import meta as meta %}
 {% from '../includes/subjects.njk' import subjects as subjects %}
 {% from '../includes/title.njk' import title as pagetitle %}
+{% from '../includes/breadcrumbs.njk' import breadcrumbs as breadcrumbsList %}
 
 {% block content %}
+{{ breadcrumbsList({
+  classes: 'space--margin-bottom-s',
+  items: breadcrumbs
+}) }}
 {{ pagetitle({
   classes: 'space--margin-bottom-l',
   text: title
