@@ -1,6 +1,7 @@
 ---
 eleventyComputed:
   title: "{{ monthYear.title }}"
+  introduction: "In {{ monthYear.title }} I wrote {{ monthYear.posts | length }} {{ 'post' | plural(monthYear.posts | length) }}."
 section_id: diary
 layout: default
 eleventyExcludeFromCollections: true
