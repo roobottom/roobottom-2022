@@ -16,16 +16,31 @@ breadcrumbs:
     url: /diary/
 ---
 {% from './includes/card.njk' import card as card %}
-<ul class="list list--grid space--margin-bottom-xl">
+{% from './includes/summary.njk' import summary as summary %}
+<ul class="list">
+{% for day in monthYear.days %}
+  <li class="list-item" aria-labelledby="day-{{ day.date | date('D') }}">
+  <h2 class="space--margin-bottom-s" id="day-{{ day.date | date('D') }}">{{ day.date | date('dddd Do') }}<span class="visually-hidden"> {{ day.date | date('MMMM YYYY') }}</span></h2>
   {% for item in monthYear.posts %}
-    <li class="list-item">
-      {{ card({
-        title: item.data.title,
-        url: item.url,
-        cover: item.data.cover or item.data.photo[0].url,
-        date: item.date | date('dddd D MMMM YYYY [at] h:mm a'),
-        badge: item.data.photo | length + ' images' if item.data.photo | length > 1
-      }) }}
-    </li>
+    {% if item.date | date('YYYY-MM-DD') == day.date | date('YYYY-MM-DD') %} 
+      <article class="preview" aria-label="diary entry for {{ item.date | date('dddd D MMMM YYYY [at] h:mm a') }}">
+        <a href="{{ item.url }}" class="preview-link">{{ item.date | date('h:mm a') }}</a>
+        <div class="prose prose--flow preview-content">
+          {{ item.templateContent | safe }}
+          {% if item.data.photo | length > 1 %}
+          <div class="gallery">
+          {% for image in item.data.photo %}
+            {% figure image.url, image.alt %}
+          {% endfor %}
+          </div>
+          {% endif %}
+          {% if item.data.photo | length == 1 %}
+            {% figure item.data.photo[0].url, item.data.photo[0].alt %}
+          {% endif %}
+        </div> 
+      </article>  
+    {% endif %}
   {% endfor %}
+  </li>
+{% endfor %}
 </ul>

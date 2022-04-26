@@ -39,6 +39,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("smartypants", require('./lib/filters/smartypants.js'))
   eleventyConfig.addFilter("firstSentence", require('./lib/filters/first-sentence.js'))
   eleventyConfig.addFilter("transform", require('./lib/filters/image-transform.js'))
+  eleventyConfig.addFilter("numberToWords", require('./lib/filters/number-to-words.js'))
 
   //shortcodes (AKA components)
   eleventyConfig.addShortcode("gallery", require('./lib/shortcodes/gallery.js'))
@@ -76,6 +77,18 @@ module.exports = function(eleventyConfig) {
         return obj.id == moment(post.date).format('YYYY-MM')
       })
       targetObject.posts.push(post)
+    }
+
+    //create an array of days for each post set
+    for (let month of allMonths) {
+      let days = []
+      for (let post of month.posts) {
+        days.push({
+          date: moment(post.date).format('YYYY-MM-DD'),
+          title: moment(post.date).format('dddd Do')
+        })
+      }
+      month.days = _.uniqBy(days, 'date')
     }
 
     //now enhance the months object

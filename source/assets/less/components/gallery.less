@@ -36,9 +36,12 @@ figcaption {
   }
 
   @media @bp[max] {
+    >figure+figure {
+      margin-top: 0;
+    }
     display: grid;
     grid-template-columns: var(--line-length) 1fr;
-    gap: var(--space-s);
+    gap: var(--space-m);
     align-items: baseline;
   }
 }
