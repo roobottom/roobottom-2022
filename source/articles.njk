@@ -13,10 +13,16 @@ introduction: Long-form writing about anything that interests me.
       {% if article.date | date('YYYY') == year %}
       <li class="list-item">
         {{ summary({
-          title: article.data.title,
-          url: article.url,
-          content: article.data.introduction or article.templateContent | striptags | firstSentence,
-          date: article.date | date('dddd D MMMM YYYY')
+          title: {
+            text: article.data.title,
+            url: article.url
+          },
+          content: {
+            text: article.data.introduction or article.templateContent | striptags | firstSentence
+          },
+          date: {
+            datetime: article.date | date('dddd D MMMM YYYY')
+          }
         }) }}
       </li>
       {% endif %}

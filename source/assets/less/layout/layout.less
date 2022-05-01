@@ -5,12 +5,9 @@
 .list {
   list-style: none;
   gap: var(--space-m);
+  margin-bottom: var(--space-l);
 
-  &--overlap {
-    gap: 0;
-  }
-
-  &:not(.list--grid):not(.list--grid-gallery) &-item:not(:last-child) {
+  &:not(.list--grid) &-item:not(:last-child) {
     padding-bottom: var(--space-m);
     margin-bottom: var(--space-m);
     &:not(:last-of-type) {
@@ -22,7 +19,6 @@
   &--timeline {
     padding-bottom: var(--space-m);
     padding-top: var(--space-s);
-    margin-bottom: var(--space-l);
     position: relative;
     &:before {
       content: "";
