@@ -1,9 +1,18 @@
-{% macro content(markdown) %}
-{% if markdown %}<div class="summary-content prose">{{ markdown | smartypants }}</div>{% endif %}
+{% macro content(content) %}
+{% if content %}<div class="summary-content prose prose--flow">
+{% if content.text %}<p>{{ content.text | smartypants }}</p>{% endif %}
+{% if content.html %}{{ content.html | safe }}{% endif %}
+</div>{% endif %}
 {% endmacro %}
 
-{% macro date(datetime) %}
-{% if datetime %}<div class="summary-date">{{ datetime }}</div>{% endif %}
+{% macro date(date) %}
+{% if date %}
+<div class="summary-date">
+  {% if date.url %}<a href="{{ date.url }}" class="summary-date-link">{% endif -%}
+  {{ date.datetime }}
+  {%- if date.url %}</a>{% endif %}
+</div>
+{% endif %}
 {% endmacro %}
 
 {% macro meta(items) %}
@@ -12,10 +21,29 @@
 {% endif %}
 {% endmacro %}
 
+{% macro title(title) %}
+{% if title %}
+<header class="summary-title">
+{% if title.url %}<a href="{{ title.url }}" class="summary-link">{% endif %}{{ title.text }}{% if title.url %}</a>{% endif %}
+</header>
+{% endif %}
+{% endmacro %}
+
+{% macro images(images) %}
+{% if images %}
+<div class="summary-images">
+{% for image in images %}
+  {% img image.url, { alt: image.alt } %}
+{% endfor %}
+</div>
+{% endif %}
+{% endmacro %}
+
 {% macro summary(params) %}
-<article class="summary">
-  <header class="summary-title"><a href="{{ params.url }}" class="summary-link">{{ params.title }}</a></header>
-    {{ content(params.content) }}
+<article class="summary {% if params.classes %}{{ parmas.classes }}{% endif %}">
+  {{ title(params.title, params.url) }}
+  {{ content(params.content) }}
+  {{ images(params.images) }}
   <footer class="summary-footer">
     {{ date(params.date) }}
     {{ meta(params.meta) }}

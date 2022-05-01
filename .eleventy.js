@@ -47,6 +47,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addShortcode("card", require('./lib/shortcodes/card.js'))
   eleventyConfig.addShortcode("quote", require('./lib/shortcodes/quote.js'))
   eleventyConfig.addShortcode("figure", require('./lib/shortcodes/figure.js'))
+  eleventyConfig.addShortcode("img", require('./lib/shortcodes/img.js'))
 
   //collections
   eleventyConfig.addCollection("tags", require('./lib/collections/tags.js'))
@@ -66,29 +67,26 @@ module.exports = function(eleventyConfig) {
         id: moment(post.date).format('YYYY-MM'),
         year: moment(post.date).format('YYYY'),
         title: moment(post.date).format('MMMM YYYY'),
-        posts: []
+        posts: [],
+        days: []
       })
     }
     let months = _.uniqBy(allMonths, 'id')
 
     //now populate the months with data
     for (let post of posts) {
-      let targetObject = _.find(months, obj => {
+      
+      //find the target month for this post
+      let targetMonth = _.find(months, obj => {
         return obj.id == moment(post.date).format('YYYY-MM')
       })
-      targetObject.posts.push(post)
-    }
-
-    //create an array of days for each post set
-    for (let month of allMonths) {
-      let days = []
-      for (let post of month.posts) {
-        days.push({
-          date: moment(post.date).format('YYYY-MM-DD'),
-          title: moment(post.date).format('dddd Do')
-        })
+      targetMonth.posts.push(post)
+      
+      //is this day in the days array? if not, push it in!
+      let dayId = moment(post.date).format('YYYY-MM-DD')
+      if(targetMonth.days.indexOf(dayId) === -1) {
+        targetMonth.days.push(dayId)
       }
-      month.days = _.uniqBy(days, 'date')
     }
 
     //now enhance the months object
