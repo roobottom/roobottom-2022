@@ -9,7 +9,7 @@
 {% if date %}
 <div class="summary-date">
   {% if date.url %}<a href="{{ date.url }}" class="summary-date-link">{% endif -%}
-  {{ date.datetime }}
+  {{ date.datetime | safe }}
   {%- if date.url %}</a>{% endif %}
 </div>
 {% endif %}

@@ -18,10 +18,10 @@ breadcrumbs:
 {% from './includes/card.njk' import card as card %}
 {% from './includes/summary.njk' import summary as summary %}
 
-{% for day in monthYear.days %}
+{% for day in monthYear.days | reverse %}
 <h2 class="h4">{{ day | date('dddd D MMMM YYYY') }}</h2>
 <ul class="list list--timeline">
-  {% for item in monthYear.posts %}
+  {% for item in monthYear.posts | reverse %}
   {% if item.date | date('YYYY-MM-DD') == day %}
   
   {% set postContent %}
@@ -33,13 +33,13 @@ breadcrumbs:
     </div>
   {% endset %}
   
-  <li class="list-item" aria-labelledby="{{ item.date | date('YYYY-MM-DD-HH-MM') }}">
+  <li class="list-item">
     {{ summary({
       content: {
         html: item.templateContent | safe
       },
       date: {
-        datetime: item.date | date('h:mm a'),
+        datetime: '<span class="visually-hidden">' + item.date | date('dddd D MMMM YYYY [at]') + '</span>' + item.date | date('h:mm a'),
         url: item.url
       },
       images: item.data.photo
@@ -49,3 +49,10 @@ breadcrumbs:
   {% endfor %}
 </ul>
 {% endfor %}
+
+<nav class="prevNext" aria-label="Forwards or backwards in time navigation">
+  <ol>
+    {% if pagination.page.next %}<li>Backwards in time: <a href="/diary/{{ pagination.page.next.title | lower | slugify }}">{{ pagination.page.next.title }}</a></li>{% endif %}
+    {% if pagination.page.previous %}<li>Forwards in time: <a href="/diary/{{ pagination.page.previous.title | lower | slugify }}">{{ pagination.page.previous.title }}</a></li>{% endif %}
+  </ol>
+</nav>
