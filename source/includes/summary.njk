@@ -1,8 +1,10 @@
 {% macro content(content) %}
-{% if content %}<div class="summary-content prose prose--flow">
+{% if content %}
+<div class="summary-content prose prose--flow">
 {% if content.text %}<p>{{ content.text | smartypants }}</p>{% endif %}
 {% if content.html %}{{ content.html | safe }}{% endif %}
-</div>{% endif %}
+</div>
+{% endif %}
 {% endmacro %}
 
 {% macro date(date) %}
@@ -33,7 +35,7 @@
 {% if images %}
 <div class="summary-images">
 {% for image in images %}
-  {% img image.url, { alt: image.alt } %}
+  <a href="{{ image.url }}">{% img image.url, { alt: image.alt } %}</a>
 {% endfor %}
 </div>
 {% endif %}
@@ -42,11 +44,11 @@
 {% macro summary(params) %}
 <article class="summary {% if params.classes %}{{ parmas.classes }}{% endif %}">
   {{ title(params.title, params.url) }}
-  {{ content(params.content) }}
-  {{ images(params.images) }}
   <footer class="summary-footer">
     {{ date(params.date) }}
     {{ meta(params.meta) }}
   </footer>
+  {{ content(params.content) }}
+  {{ images(params.images) }}
 </article>
 {% endmacro %}

@@ -17,6 +17,7 @@ breadcrumbs:
 ---
 {% from './includes/card.njk' import card as card %}
 {% from './includes/summary.njk' import summary as summary %}
+{% from './includes/prevNext.njk' import prevNext as prevNext %}
 
 {% for day in monthYear.days | reverse %}
 <h2 class="h4">{{ day | date('dddd D MMMM YYYY') }}</h2>
@@ -37,7 +38,7 @@ breadcrumbs:
     {{ summary({
       content: {
         html: item.templateContent | safe
-      },
+      } if not item.templateContent == '',
       date: {
         datetime: '<span class="visually-hidden">' + item.date | date('dddd D MMMM YYYY [at]') + '</span>' + item.date | date('h:mm a'),
         url: item.url
@@ -50,9 +51,20 @@ breadcrumbs:
 </ul>
 {% endfor %}
 
-<nav class="prevNext" aria-label="Forwards or backwards in time navigation">
-  <ol>
-    {% if pagination.page.next %}<li>Backwards in time: <a href="/diary/{{ pagination.page.next.title | lower | slugify }}">{{ pagination.page.next.title }}</a></li>{% endif %}
-    {% if pagination.page.previous %}<li>Forwards in time: <a href="/diary/{{ pagination.page.previous.title | lower | slugify }}">{{ pagination.page.previous.title }}</a></li>{% endif %}
-  </ol>
-</nav>
+{{ prevNext({
+  label: 'Navigate forwards or backwards in time',
+  prev: {
+    title: 'Go backwards in time',
+    url: {
+      link: '/diary/' + pagination.page.next.title | lower | slugify,
+      text: pagination.page.next.title
+    }
+  } if pagination.page.next,
+  next: {
+    title: 'Go forwards in time',
+    url: {
+      link: '/diary/' + pagination.page.previous.title | lower | slugify,
+      text: pagination.page.previous.title
+    }
+  } if pagination.page.previous
+}) }}

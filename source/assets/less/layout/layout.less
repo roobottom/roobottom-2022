@@ -7,7 +7,7 @@
   gap: var(--space-m);
   margin-bottom: var(--space-l);
 
-  &:not(.list--grid) &-item:not(:last-child) {
+  &:not(.list--grid):not(&--timeline) &-item:not(:last-child) {
     padding-bottom: var(--space-m);
     margin-bottom: var(--space-m);
     &:not(:last-of-type) {
@@ -31,7 +31,11 @@
     }
   }
   &--timeline &-item {
-    border-bottom: none !important;
+    border-left: 1px solid var(--c-grey-x-light);
+    padding-left: var(--space-xs);
+  }
+  &--timeline &-item+&-item {
+    padding-top: var(--space-m);
   }
 
 }
