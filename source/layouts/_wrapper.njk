@@ -69,7 +69,7 @@
                 </svg>
             </div>
             <div class="footer-content">
-                <p>&copy; Jon Roobottom {date} - {date}</p>
+                <p>&copy; Jon Roobottom {{ collections.stats.allPosts.earliest | date('YYYY') }} to {{ collections.stats.allPosts.latest | date('YYYY') }}</p>
             </div>
 
             <h4 class="footer-title h5" id="explore-this-site">Explore this site</h4>

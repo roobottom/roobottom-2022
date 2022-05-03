@@ -1,17 +1,44 @@
 {% extends './_wrapper.njk' %}
+{% from '../includes/card.njk' import card as card %}
 
 {% block content %}
+<h1>{{ title }}</h1>
+<div class="prose prose--flow space--margin-top-m">
+{{ content | safe }}
+</div>
 <div class="prose prose--flow space--margin-top-xxl">
-  <h2 id="featured-writing">Featured writing</h2>
-  <p>Here’s a some of my favourite things I’ve written.</p>
+  <h2 id="featured-writing">Featured articles</h2>
+  <p>I sometimes write longer things, here’s a few of my favourites.</p>
 </div>
 <ul class="list list--grid space--margin-top-m">
   {% for item in collections.articles %}
     {% if item.data.featured %}
       <li class="list-item">
-        {% card item.data.title, item.url, item.data.cover, item.date | date %}
+        {{ card({
+          title: item.data.title,
+          url: item.url,
+          cover: item.data.cover,
+          date: item.date | date('dddd D MMMM YYYY')
+        }) }}
       </li>
     {% endif %}
+  {% endfor %}
+</ul>
+
+<div class="prose prose--flow space--margin-top-m">
+  <h2 id="featured-writing">Recent diary posts</h2>
+  <p>Short posts about the day-to-day life of my family.</p>
+</div>
+<ul class="list list--grid space--margin-top-m">
+  {% for i in range(0,3) %}
+    <li class="list-item">
+      {{ card({
+        title: collections.diary[i].data.title,
+        url: collections.diary[i].url,
+        cover: collections.diary[i].data.photo[0].url,
+        date: collections.diary[i].date | date('dddd D MMMM YYYY [at] h:mm a')
+      }) }}
+    </li>
   {% endfor %}
 </ul>
 {% endblock %}
