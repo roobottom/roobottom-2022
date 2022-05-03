@@ -3,6 +3,7 @@
 {% from '../includes/subjects.njk' import subjects as subjects %}
 {% from '../includes/title.njk' import title as pagetitle %}
 {% from '../includes/breadcrumbs.njk' import breadcrumbs as breadcrumbsList %}
+{% from '../includes/prevNext.njk' import prevNext as prevNext %}
 
 {% block content %}
 {{ breadcrumbsList({
@@ -25,7 +26,30 @@
     } if tags
   ]
 }) }}
-<div class="prose prose--flow">
+<div class="prose prose--flow space--margin-bottom-xl">
   {{ content | safe }}
 </div>
+
+{% set prevPost = collections.articles | getNextCollectionItem(page) %}
+{% set nextPost = collections.articles | getPreviousCollectionItem(page)  %}
+
+{{ prevNext({
+  label: 'Navigate between articles',
+  prev: {
+    title: 'Previous article',
+    url: {
+      link: prevPost.url,
+      text: prevPost.data.title
+    },
+    date: prevPost.date | date('dddd D MMMM YYYY')
+  } if prevPost,
+  next: {
+    title: 'Next article',
+    url: {
+      link: nextPost.url,
+      text: nextPost.data.title
+    },
+    date: nextPost.date | date('dddd D MMMM YYYY')
+  } if nextPost
+}) }}
 {% endblock %}
