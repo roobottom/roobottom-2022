@@ -31,11 +31,11 @@
 {% endif %}
 {% endmacro %}
 
-{% macro images(images) %}
+{% macro images(images, url) %}
 {% if images %}
 <div class="summary-images">
 {% for image in images %}
-  <a href="{{ image.url }}">{% img image.url, { alt: image.alt } %}</a>
+  <a href="{{ url }}#{{ image.url | basename }}">{% img image.url, { alt: image.alt } %}</a>
 {% endfor %}
 </div>
 {% endif %}
@@ -43,12 +43,12 @@
 
 {% macro summary(params) %}
 <article class="summary {% if params.classes %}{{ parmas.classes }}{% endif %}">
-  {{ title(params.title, params.url) }}
+  {{ title(params.title) }}
   <footer class="summary-footer">
     {{ date(params.date) }}
     {{ meta(params.meta) }}
   </footer>
   {{ content(params.content) }}
-  {{ images(params.images) }}
+  {{ images(params.images, params.title.url or params.date.url) }}
 </article>
 {% endmacro %}

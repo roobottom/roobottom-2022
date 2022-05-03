@@ -40,6 +40,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("firstSentence", require('./lib/filters/first-sentence.js'))
   eleventyConfig.addFilter("transform", require('./lib/filters/image-transform.js'))
   eleventyConfig.addFilter("numberToWords", require('./lib/filters/number-to-words.js'))
+  eleventyConfig.addFilter("basename", require('./lib/filters/basename.js'))
 
   //shortcodes (AKA components)
   eleventyConfig.addShortcode("gallery", require('./lib/shortcodes/gallery.js'))
