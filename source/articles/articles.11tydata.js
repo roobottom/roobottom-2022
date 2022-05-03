@@ -21,7 +21,7 @@ module.exports = {
         url: process.env.SITE_URL + data.page.url,
         description: data.summary === undefined ? firstSentence(data.title) : data.summary,
         image: {
-          url: data.cover === undefined ? `https://ik.imagekit.io/roobottom/tr:ot-${encodeURIComponent(data.title.substring(0, 26))},otc-FFFFFF,otw-1280,ots-180,otf-Bely.ttf/og-backgrond.png` : transforms(process.env.SITE_URL + data.cover, 'og'),
+          url: data.cover === undefined ? `https://ik.imagekit.io/roobottom/tr:ot-${encodeURIComponent(data.title.substring(0, 26))},otc-FFFFFF,otw-1280,ots-180,otf-Bely.ttf/og-backgrond.png` : transforms(data.cover, 'og'),
           alt: data.coverAlt
         },
         date: date(data.date, 'YYYY-MM-DD[T]hh:mm:ss.SSS[Z]')
