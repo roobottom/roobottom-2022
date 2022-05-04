@@ -107,7 +107,7 @@ module.exports = function(eleventyConfig) {
   })
 
   return {
-    templateFormats: ['njk','md'],
+    templateFormats: ['njk','md','11ty.js'],
     markdownTemplateEngine: 'njk',
     dir: {
       input: "source",

@@ -81,6 +81,15 @@
                 </ul>
             </nav>
 
+            <h4 class="footer-title h5" id="elsewhere-on-the-web">Elsewhere on the web</h4>
+            <nav aria-labelledby="elsewhere-on-the-web">
+                <ul class="footer-navigation">
+                  {% for item in navigation.elsewhere %}
+                    <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                  {% endfor %}  
+                </ul>
+            </nav>
+
         </footer>
         <script src="{{ global.cdn }}prismjs@v1.x/components/prism-core.min.js"></script>
 	    <script src="{{ global.cdn }}prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
