@@ -42,11 +42,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("numberToWords", require('./lib/filters/number-to-words.js'))
   eleventyConfig.addFilter("basename", require('./lib/filters/basename.js'))
 
-  //shortcodes (AKA components)
-  eleventyConfig.addShortcode("gallery", require('./lib/shortcodes/gallery.js'))
-  eleventyConfig.addShortcode("outcomes", require('./lib/shortcodes/outcomes.js'))
-  eleventyConfig.addShortcode("card", require('./lib/shortcodes/card.js'))
-  eleventyConfig.addShortcode("quote", require('./lib/shortcodes/quote.js'))
+  //shortcodes (AKA components) used in Nunjucks and Markdown
   eleventyConfig.addShortcode("figure", require('./lib/shortcodes/figure.js'))
   eleventyConfig.addShortcode("img", require('./lib/shortcodes/img.js'))
 
