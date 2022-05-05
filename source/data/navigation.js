@@ -27,11 +27,11 @@ module.exports = {
   ],
   elsewhere: [
     {
-      url: 'https://roodesign.co.uk',
-      title: 'Roodesign: a tiny creative agency'
-    }, {
       url: 'https://github.com',
       title: 'Github'
+    }, {
+      url: 'https://twitter.com/roobottom',
+      title: 'Twitter'
     }
   ]
 }
