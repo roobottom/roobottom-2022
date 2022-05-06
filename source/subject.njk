@@ -15,23 +15,28 @@ pagination:
     <li class="list-item">
       {% set content = article.data.introduction or article.templateContent | striptags | firstSentence if article.data.section_id == 'articles' %}
       {{ summary({
-          title: {
-            text: article.data.title | safe,
-            url: article.url
-          },
-          content: {
-            text: content
-          },
-          date: {
-            datetime: article.date | date('ddd D MMMM YYYY')
-          },
-          meta: [
-            {
-              key: 'Posted in',
-              value: '<a href="/' + article.data.section_id + '/">' + article.data.section_id | title + '</a>'
-            }
-          ]
-        }) }}
+        classes: 'summary--quick',
+        title: {
+          text: article.data.title | safe,
+          url: article.url
+        },
+        content: {
+          text: content
+        },
+        date: {
+          datetime: article.date | date('ddd D MMMM YYYY')
+        },
+        meta: [
+          {
+            key: 'Posted in',
+            value: '<a href="/' + article.data.section_id + '/">' + article.data.section_id | title + '</a>'
+          }
+        ],
+        images: {
+          object: article.data.photo,
+          transform: 'small'
+        } if article.data.photo
+      }) }}
     </li>
   {% endfor %}
 </ul>
