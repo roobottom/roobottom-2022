@@ -43,7 +43,9 @@ breadcrumbs:
         datetime: '<span class="visually-hidden">' + item.date | date('dddd D MMMM YYYY [at]') + '</span>' + item.date | date('h:mm a'),
         url: item.url
       },
-      images: item.data.photo
+      images: {
+        object: item.data.photo
+      }
     }) }}
   </li>
   {% endif %}
