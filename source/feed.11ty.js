@@ -56,7 +56,7 @@ class Feed {
         cover = site_url + item.data.photo[0].url
       }
       else {
-        cover = `${site_url}/assets/images/og-default.png`
+        cover = ''
       }
 
       feed.items.push({
