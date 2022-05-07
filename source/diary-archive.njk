@@ -19,10 +19,10 @@ breadcrumbs:
 {% from './includes/summary.njk' import summary as summary %}
 {% from './includes/prevNext.njk' import prevNext as prevNext %}
 
-{% for day in monthYear.days | reverse %}
+{% for day in monthYear.days %}
 <h2 class="h4">{{ day | date('dddd D MMMM YYYY') }}</h2>
 <ul class="list list--timeline">
-  {% for item in monthYear.posts | reverse %}
+  {% for item in monthYear.posts %}
   {% if item.date | date('YYYY-MM-DD') == day %}
   
   {% set postContent %}

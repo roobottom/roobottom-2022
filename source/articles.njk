@@ -18,7 +18,7 @@ introduction: Long-form writing about anything that interests me.
             url: article.url
           },
           content: {
-            text: article.data.introduction or article.templateContent | striptags | firstSentence
+            text: article.data.introduction or article.data.summary or article.templateContent | striptags | firstSentence
           },
           date: {
             datetime: article.date | date('dddd D MMMM YYYY')
