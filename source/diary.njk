@@ -8,11 +8,12 @@ introduction: A collection of short posts about the day-to-day life of my family
 {% from './includes/card.njk' import card as card %}
 <h2 class="space--margin-bottom-m">Recent posts</h2>
 <ul class="list list--grid space--margin-bottom-xl">
-  {% for i in range(0,3) %}
-    {% set item = collections.diary[i] %}
+  {% for item in collections.diary.slice(0,3) %}
+    {% if item.data.photo %}{% set title = item.data.title %}
+    {% else %}{% set title = item.templateContent | safe | truncate %}{% endif %}
     <li class="list-item">
       {{ card({
-        title: item.data.title,
+        title: title,
         url: item.url,
         cover: item.data.cover or item.data.photo[0].url,
         date: item.date | date('dddd D MMMM YYYY [at] h:mm a'),

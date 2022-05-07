@@ -12,7 +12,7 @@
 
 {% macro card(params) %}
 <article class="card" {{ cover(params.cover) }}>
-  <header class="card-cover">{{ badge(params.badge) }}</header>
+  {% if params.cover %}<header class="card-cover">{{ badge(params.badge) }}</header>{% endif %}
   <h2 class="card-title"><a href="{{ params.url }}" class="card-link">{{ params.title }}</a></h2>
   {{ date(params.date) }}
 </article>

@@ -30,13 +30,15 @@
   <p>Short posts about the day-to-day life of my family.</p>
 </div>
 <ul class="list list--grid space--margin-top-m">
-  {% for i in range(0,3) %}
-    <li class="list-item">
+  {% for post in collections.diary.slice(0,3) %}
+    <li class="list-item">    
+      {% if post.data.photo %}{% set title = post.data.title %}
+      {% else %}{% set title = post.templateContent | safe | truncate %}{% endif %}
       {{ card({
-        title: collections.diary[i].data.title,
-        url: collections.diary[i].url,
-        cover: collections.diary[i].data.photo[0].url,
-        date: collections.diary[i].date | date('dddd D MMMM YYYY [at] h:mm a')
+        title: title,
+        url: post.url,
+        cover: post.data.photo[0].url,
+        date: post.date | date('dddd D MMMM YYYY [at] h:mm a')
       }) }}
     </li>
   {% endfor %}
