@@ -10,9 +10,11 @@ coverAlt: A view of the mansion house at Staunton Park pre 1950
 ---
 Follies are fantastic pieces of decorative architecture. They don't serve any practical function other than to be objects of fascination. In Staunton Park in Havant, there's a great folly on the grounds of a long disappeared country pile; The Shell House.
 
-{% figure '/assets/images/articles/stauntons-folly/shell-house.jpeg', 'The Shell House folly at Staunton Park, Havant.' %}
+{% figure '/assets/images/articles/stauntons-folly/shell-house.jpeg', 'The Shell House folly at Staunton Park, Havant.', 'wide' %}
 
-This weekend we spent time with Katie's cousin and family. On Saturday morning, in an attempt to burn off too much cheese and booze the night before, Andy and I completed the [Havant Parkrun](https://www.strava.com/activities/7100841660). The course starts near what's now a café, but what was once a stable, and descends a steep hill towards an ornamental lake. En route, if you're not all consumed by the effort of the run, you might notice several unusual buildings, not least of which is the Shell House.
+The Shell Folly — which is based on the Chichester Cross — is particularly lovely. Gone are the ornate shell panels of Staunton's day. Instead, there's a display of shells painted by local school children over recent years. In its repaired state, it gives a hint of what must have been an outstanding country estate. 
+
+This weekend we spent time with Katie's cousin and family. On Saturday morning, in an attempt to burn off too much cheese and booze the night before, Andy and I completed the [Havant Parkrun](https://www.strava.com/activities/7100841660). The course starts near what's now a café, but what was once a stable, and descends a steep hill towards an ornamental lake. En route, if you're not all consumed by the effort of the run, you might notice several unusual buildings.
 
 In 1820, Sir George Staunton purchased a grand house and associated grounds of what was then called Leigh Park Gardens. He wasted no time remodelling the home and commissioned several Follies on the grounds. All that survives today is the Shell House and Beacon follies and the Chinese bridge. Alas, the house—which the government requisitioned during world war 2—was eventually so dilapidated it was demolished in 1959. 
 
@@ -28,7 +30,6 @@ With funding from the Lottery Heritage Fund, Hampshire County Council has done a
 {% figure '/assets/images/articles/stauntons-folly/vaults.jpeg', 'Rootwo under the vaulted walkway that runs under the Grand Terrace.' %}
 :::
 
-The Shell Folly — which is based on the Chichester Cross — is particularly lovely. Gone are the ornate shell panels of Staunton's day. Instead, there's a display of shells painted by local school children over recent years. In its repaired state, it gives a hint of what must have been an outstanding country estate. 
-
+## Follies galore
 Searching online to help write this article, I came across the fantastic [Folly Flâneuse blog's post on the Shell House](https://thefollyflaneuse.com/the-shell-house-leigh-park-havant-hampshire/). Go there if you want some great content about this and other follies. 
 
