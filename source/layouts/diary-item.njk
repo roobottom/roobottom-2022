@@ -4,6 +4,28 @@
 {% from '../includes/breadcrumbs.njk' import breadcrumbs as breadcrumbsList %}
 {% from '../includes/prevNext.njk' import prevNext as prevNext %}
 
+{% set kidsAges %}
+{# How old was Roo when this post was published? #}
+{% set roo_milliseconds = date | dateDiff(global.dob_roo) %}
+{% set rootwo_milliseconds = date | dateDiff(global.dob_rootwo) %}
+
+{% if roo_milliseconds > 2629800000 %}
+Roo was {{ roo_milliseconds | msDuration }}
+{% elif roo_milliseconds < 2629800000 and roo_milliseconds > 0 %}
+and Roo was born this month
+{% else %}
+Roo will be born in {{ roo_milliseconds | msDuration(true) }}
+{% endif %}
+{% if rootwo_milliseconds > 2629800000 %}
+and Rootwo was {{ rootwo_milliseconds | msDuration }}.
+{% elif rootwo_milliseconds < 2629800000 and rootwo_milliseconds > 0 %}
+and Rootwo was born this month.
+{% else %}
+and Rootwo will be born in {{ rootwo_milliseconds | msDuration(true) }}.
+{% endif %}
+
+{% endset %}
+
 {% block content %}
 {{ breadcrumbsList({
   classes: 'space--margin-bottom-s',
@@ -18,7 +40,10 @@
     }, {
       key: 'Subjects',
       value: subjects(tags)
-    } if tags | length > 0
+    } if tags | length > 0, {
+      key: 'Kid’s ages',
+      value: kidsAges
+    }
   ]
 }) }}
 <div class="prose prose--flow space--margin-bottom-xl">
