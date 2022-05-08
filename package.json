@@ -32,6 +32,7 @@
     "marked": "^4.0.12",
     "moment": "^2.29.1",
     "number-to-words": "^1.2.4",
+    "rss": "^1.2.2",
     "slugify": "^1.6.5",
     "smartypants": "^0.1.6"
   }

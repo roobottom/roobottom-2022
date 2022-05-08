@@ -34,17 +34,6 @@ class Feed {
     for (let item of items) {
 
       let content = item.templateContent
-
-      if (item.data.links) {
-        for (let link of item.data.links) {
-          content = content + `<p><a href="${link}">${link}</a></p>`
-        }
-      }
-
-      if (item.data.section_id === 'articles') {
-        content = content + `<p><a href="https://roobottom.com${item.url}">Read this article on my website.</a></p>`
-      }
-
       //in post images
       if (item.data.photo) {
         for (let photo of item.data.photo) {
