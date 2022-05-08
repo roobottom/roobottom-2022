@@ -12,7 +12,6 @@ class SiteMap {
 
   render({ collections: { articles, diary, tags }, global: { base_url } }) {
     const navigation = require('./data/navigation.js')['footer'].map(item => `${base_url}${item.url}`)
-    console.log(navigation)
     const diaryPosts = diary.map(post => `${base_url}${post.url}/`)
     const articlePosts = articles.map(article => `${base_url}${article.url}/`)
     const subjects = tags.map(tag => `${base_url}/tags/${slugify(tag.title)}/`)
