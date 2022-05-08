@@ -1,0 +1,12 @@
+---
+permalink: /_redirects
+eleventyExcludeFromCollections: true
+---
+{% for article in collections.articles %}/articles/{{ article.fileSlug }}/ /articles/{{ article.date | date('YYYY-MM-DD') }}-{{ article.data.title | slugify | safe }}/
+{% endfor %}
+{% for tag in collections.tags %}/tags/{{ tag.title | slugify }}/ /subjects/{{ tag.title | slugify }}/
+{% endfor %}
+/tags/ /subjects/
+/archives/* /diary/:splat/
+/notes/ /diary/
+/notes/* /diary/:splat
