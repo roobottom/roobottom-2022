@@ -15,7 +15,7 @@
         title: params.prev.title if params.prev.title,
         url: {
           link: params.prev.url.link,
-          text: params.prev.url.text
+          text: params.prev.url.text | safe
         },
         date: params.prev.date
       }) }}
@@ -26,7 +26,7 @@
         title: params.next.title if params.next.title,
         url: {
           link: params.next.url.link,
-          text: params.next.url.text
+          text: params.next.url.text | safe
         },
         date: params.next.date
       }) }}
