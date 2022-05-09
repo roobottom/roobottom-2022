@@ -12,7 +12,7 @@
     {% if years_old < 1 and months_old < 1 %}
     {{ label }} was just born {{ emoji }}
     {% else %}
-    {{ label }} was {{ years_old + ' year' | plural(years_old) if years_old > 0 }}{{ ' and ' + months_old + ' month' | plural(months_old) if months_old > 0 }} old
+    {{ label }} was {{ years_old + ' year' | plural(years_old) if years_old > 0 }}{{ ' and ' + months_old + ' month' | plural(months_old) if months_old > 0 }}
     {% endif %}
   {% else %}
     {% set days_old = days_old * -1 %}
@@ -24,7 +24,7 @@
 
 {% set kidsAges %}
 {# How old was Roo when this post was published? #}
-{{ age(global.dob_roo, date, 'Roo', '👨‍👩‍👧') }} and {{ age(global.dob_rootwo, date, 'Rootwo', '👨‍👩‍👧‍👦') }} when this entry was posted.
+{{ age(global.dob_roo, date, 'Roo', '👨‍👩‍👧') }} and {{ age(global.dob_rootwo, date, 'Rootwo', '👨‍👩‍👧‍👦') }}.
 {% endset %}
 
 {% block content %}
