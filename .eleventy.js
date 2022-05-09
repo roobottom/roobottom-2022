@@ -36,7 +36,7 @@ module.exports = function(eleventyConfig) {
   //filters
   eleventyConfig.addFilter("date", require('./lib/filters/date.js'))
   eleventyConfig.addFilter("dateDiff", require('./lib/filters/date-diff.js'))
-  eleventyConfig.addFilter("msDuration", require('./lib/filters/ms-duration.js'))
+  eleventyConfig.addFilter("daysToPeriod", require('./lib/filters/days-to-period.js'))
   eleventyConfig.addFilter("plural", require('./lib/filters/plural.js'))
   eleventyConfig.addFilter("smartypants", require('./lib/filters/smartypants.js'))
   eleventyConfig.addFilter("firstSentence", require('./lib/filters/first-sentence.js'))

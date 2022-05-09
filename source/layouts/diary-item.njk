@@ -4,26 +4,27 @@
 {% from '../includes/breadcrumbs.njk' import breadcrumbs as breadcrumbsList %}
 {% from '../includes/prevNext.njk' import prevNext as prevNext %}
 
+{% macro age(dob, date, label, emoji) %}
+  {% set days_old = date | dateDiff(dob) %}
+  {% if days_old >= 0 %}
+    {% set years_old = days_old | daysToPeriod('years') %}
+    {% set months_old = days_old | daysToPeriod('months') %}
+    {% if years_old < 1 and months_old < 1 %}
+    {{ label }} was just born {{ emoji }}
+    {% else %}
+    {{ label }} was {{ years_old + ' year' | plural(years_old) if years_old > 0 }}{{ ' and ' + months_old + ' month' | plural(months_old) if months_old > 0 }} old
+    {% endif %}
+  {% else %}
+    {% set days_old = days_old * -1 %}
+    {% set years_old = days_old | daysToPeriod('years') %}
+    {% set months_old = days_old | daysToPeriod('months') %}
+    {{ label }} will be born in {{ years_old + ' year' | plural(years_old) if years_old > 0 }}{{ ' and ' + months_old + ' month' | plural(months_old) if months_old > 0 }}
+  {% endif %}
+{% endmacro %}
+
 {% set kidsAges %}
 {# How old was Roo when this post was published? #}
-{% set roo_milliseconds = date | dateDiff(global.dob_roo) %}
-{% set rootwo_milliseconds = date | dateDiff(global.dob_rootwo) %}
-
-{% if roo_milliseconds > 2629800000 %}
-Roo was {{ roo_milliseconds | msDuration }}
-{% elif roo_milliseconds < 2629800000 and roo_milliseconds > 0 %}
-and Roo was born this month
-{% else %}
-Roo will be born in {{ roo_milliseconds | msDuration(true) }}
-{% endif %}
-{% if rootwo_milliseconds > 2629800000 %}
-and Rootwo was {{ rootwo_milliseconds | msDuration }}.
-{% elif rootwo_milliseconds < 2629800000 and rootwo_milliseconds > 0 %}
-and Rootwo was born this month.
-{% else %}
-and Rootwo will be born in {{ rootwo_milliseconds | msDuration(true) }}.
-{% endif %}
-
+{{ age(global.dob_roo, date, 'Roo', '👨‍👩‍👧') }} and {{ age(global.dob_rootwo, date, 'Rootwo', '👨‍👩‍👧‍👦') }} when this entry was posted.
 {% endset %}
 
 {% block content %}
