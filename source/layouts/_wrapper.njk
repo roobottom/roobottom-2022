@@ -47,7 +47,7 @@
         <header class="container">
             <nav class="navigation{% if template == "home" or template == 'services' %} navigation--reverse{% endif %}" aria-label="Main">
             <a href="/" class="navigation__sitename" aria-labelledby="sitename">
-                Jon’s website <span class="visually-hidden">homepage</span></span>
+                Jon’s website <span class="visually-hidden">homepage</span>
             </a>
             <ul class="navigation__items">
                 {% for item in navigation.main %}
@@ -56,10 +56,9 @@
             </ul>
             </nav>
         </header>
-        <main class="container">
+        <main class="container{% if container_type %} container--{{ container_type }}{% endif %}">
             {% block content %}
             {% endblock %}
-            <p>
         </main>
         <footer class="container footer">
             <div class="fin">
