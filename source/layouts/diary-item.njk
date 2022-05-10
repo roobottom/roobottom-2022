@@ -50,7 +50,8 @@
 <div class="prose prose--flow space--margin-bottom-xl">
   {{ content | safe }}
   {% for image in photo %}
-    {% figure image.url, image.alt %}
+    {% set imageUrl %}{% if image.url | first != '/' %}/{% endif %}{{ image .url }}{% endset %}
+    {% figure imageUrl, image.alt %}
   {% endfor %}
 </div>
 

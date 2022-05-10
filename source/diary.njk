@@ -12,10 +12,11 @@ introduction: A collection of short posts about the day-to-day life of my family
     {% if item.data.photo %}{% set title = item.data.title %}
     {% else %}{% set title = item.templateContent | safe | truncate %}{% endif %}
     <li class="list-item">
+      {% set cover %}{% if item.data.photo %}{% if item.data.photo[0].url | first != '/' %}/{% endif %}{{ item.data.photo[0].url }}{% endif %}{% endset %}
       {{ card({
         title: title,
         url: item.url,
-        cover: item.data.cover or item.data.photo[0].url,
+        cover: item.data.cover or cover,
         date: item.date | date('dddd D MMMM YYYY [at] h:mm a'),
         badge: item.data.photo | length + ' images' if item.data.photo | length > 1
       }) }}

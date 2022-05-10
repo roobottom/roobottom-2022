@@ -34,10 +34,11 @@
     <li class="list-item">    
       {% if post.data.photo %}{% set title = post.data.title %}
       {% else %}{% set title = post.templateContent | safe | truncate %}{% endif %}
+      {% set cover %}{% if post.data.photo %}{% if post.data.photo[0].url | first != '/' %}/{% endif %}{{ post.data.photo[0].url }}{% endif %}{% endset %}
       {{ card({
         title: title,
         url: post.url,
-        cover: post.data.photo[0].url,
+        cover: item.data.cover or cover,
         date: post.date | date('dddd D MMMM YYYY [at] h:mm a')
       }) }}
     </li>
