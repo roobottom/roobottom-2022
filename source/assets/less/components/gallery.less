@@ -35,14 +35,18 @@ figcaption {
     margin-top: var(--space-m);
   }
 
-  @media @bp[max] {
+  @media screen and (min-width:1215px) {
     >figure+figure {
       margin-top: 0;
     }
     display: grid;
-    grid-template-columns: var(--line-length) 1fr;
-    gap: var(--space-m);
+    grid-template-columns: var(--line-length) 1fr 1fr;
+    row-gap: var(--space-m);
+    column-gap: var(--space-xs);
     align-items: baseline;
+    >figure:nth-child(3n-1):last-child {
+      grid-column: span 2;
+    }
   }
 }
 

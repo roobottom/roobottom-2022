@@ -10,7 +10,7 @@ coverAlt: A view of the mansion house at Staunton Park pre 1950
 ---
 Follies are fantastic pieces of decorative architecture. They don't serve any practical function other than to be objects of fascination. In Staunton Park in Havant, there's a great folly on the grounds of a long disappeared country pile; The Shell House.
 
-{% figure '/assets/images/articles/stauntons-folly/shell-house.jpeg', 'The Shell House folly at Staunton Park, Havant.', 'wide' %}
+{% figure '/assets/images/articles/stauntons-folly/shell-house.jpeg', 'The Shell House folly at Staunton Park, Havant.' %}
 
 The Shell Folly — which is based on the Chichester Cross — is particularly lovely. Gone are the ornate shell panels of Staunton's day. Instead, there's a display of shells painted by local school children over recent years. In its repaired state, it gives a hint of what must have been an outstanding country estate. 
 
@@ -25,9 +25,7 @@ With funding from the Lottery Heritage Fund, Hampshire County Council has done a
 
 {% figure '/assets/images/articles/stauntons-folly/house-outline.jpeg', 'The latticework of stones which show where the many rooms of the mansion once stood.' %}
 
-{% figure '/assets/images/articles/stauntons-folly/tiles.jpeg', 'Gorgeous inlaid tiles; a reminder of a once great house.' %}
-
-{% figure '/assets/images/articles/stauntons-folly/vaults.jpeg', 'Rootwo under the vaulted walkway that runs under the Grand Terrace.' %}
+{% figure '/assets/images/articles/stauntons-folly/vaults.jpeg', 'Rootwo under the vaulted walkway that runs under the Grand Terrace. On the floor, you can see the gorgeous inlaid tiles; a reminder of a once great house.' %}
 :::
 
 ## Follies galore
