@@ -1,13 +1,16 @@
 .prevNext {
+  font-size: var(--step-0);
+  color: var(--c-grey-dark);
+  #type.family.alt;
   &-title {
-    #type.family.default;
     font-size: var(--step-0);
+    #type.family.alt;
   }
   &-item {
     list-style: none;
   }
   &-item+&-item {
-    margin-top: var(--space-m);
+    margin-top: var(--space-s);
   }
   &-item--prev &-title:before {
     content: "←";
@@ -16,10 +19,15 @@
     content: "→";
   }
   &-link {
-    #type.style.link;
+    #type.style.link(var(--c-grey-dark), @underline: underline);
   }
   &-date {
+    color: var(--c-grey);
     font-size: var(--step--1);
-    color: var(--c-grey-dark);
+  }
+
+  @media @bp[max] {
+    &, &-title { font-size: var(--step--1); }
+    &-date { font-size: var(--step--2);}
   }
 }

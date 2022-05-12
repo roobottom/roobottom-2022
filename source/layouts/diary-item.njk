@@ -1,3 +1,6 @@
+---
+container_type: 'article'
+---
 {% extends './_wrapper.njk' %}
 {% from '../includes/meta.njk' import meta as meta %}
 {% from '../includes/subjects.njk' import subjects as subjects %}
@@ -6,7 +9,7 @@
 
 {% macro age(dob, date, label, emoji) %}
   {% set days_old = date | dateDiff(dob) %}
-  {% if days_old >= 0 %}
+  {%- if days_old >= 0 -%}
     {% set years_old = days_old | daysToPeriod('years') %}
     {% set months_old = days_old | daysToPeriod('months') %}
     {% if years_old < 1 and months_old < 1 %}
@@ -14,26 +17,28 @@
     {% else %}
     {{ label }} was {{ years_old + ' year' | plural(years_old) if years_old > 0 }}{{ ' and ' + months_old + ' month' | plural(months_old) if months_old > 0 }}
     {% endif %}
-  {% else %}
+  {%- else -%}
     {% set days_old = days_old * -1 %}
     {% set years_old = days_old | daysToPeriod('years') %}
     {% set months_old = days_old | daysToPeriod('months') %}
     {{ label }} will be born in {{ years_old + ' year' | plural(years_old) if years_old > 0 }}{{ ' and ' + months_old + ' month' | plural(months_old) if months_old > 0 }}
-  {% endif %}
+  {%- endif -%}
 {% endmacro %}
 
 {% set kidsAges %}
 {# How old was Roo when this post was published? #}
-{{ age(global.dob_roo, date, 'Roo', '👨‍👩‍👧') }} and {{ age(global.dob_rootwo, date, 'Rootwo', '👨‍👩‍👧‍👦') }}.
+{{ age(global.dob_roo, date, 'Roo', '👨‍👩‍👧') }} and {{ age(global.dob_rootwo, date, 'Rootwo', '👨‍👩‍👧‍👦') }}
 {% endset %}
 
 {% block content %}
+<header>
 {{ breadcrumbsList({
   classes: 'space--margin-bottom-s',
   items: breadcrumbs
 }) }}
+</header>
+<aside>
 {{ meta({
-  classes: 'space--margin-bottom-l',
   items: [
     {
       key: 'Date',
@@ -41,19 +46,28 @@
     }, {
       key: 'Subjects',
       value: subjects(tags)
-    } if tags | length > 0, {
-      key: 'Kid’s ages',
-      value: kidsAges
-    }
+    } if tags | length > 0
   ]
 }) }}
-<div class="prose prose--flow space--margin-bottom-xl">
+</aside>
+<article class="prose prose--flow">
   {{ content | safe }}
   {% for image in photo %}
     {% set imageUrl %}{% if image.url | first != '/' %}/{% endif %}{{ image .url }}{% endset %}
     {% figure imageUrl, image.alt %}
   {% endfor %}
-</div>
+</article>
+
+<footer>
+{{ meta({
+  classes: 'space--margin-bottom-s',
+  items: [
+    {
+      key: 'Kid’s ages',
+      value: kidsAges
+    }
+  ]
+}) }}
 
 {% set prevPost = collections.diary | getNextCollectionItem(page) %}
 {% set nextPost = collections.diary | getPreviousCollectionItem(page)  %}
@@ -61,7 +75,7 @@
 {{ prevNext({
   label: 'Navigate between diary posts',
   prev: {
-    title: 'Previous diary posts',
+    title: 'Previously',
     url: {
       link: prevPost.url,
       text: prevPost.data.title
@@ -69,7 +83,7 @@
     date: prevPost.date | date('dddd D MMMM YYYY [at] h:mm a')
   } if prevPost,
   next: {
-    title: 'Next diary post',
+    title: 'Subsequently',
     url: {
       link: nextPost.url,
       text: nextPost.data.title
@@ -77,4 +91,5 @@
     date: nextPost.date | date('dddd D MMMM YYYY [at] h:mm a')
   } if nextPost
 }) }}
+</footer>
 {% endblock %}

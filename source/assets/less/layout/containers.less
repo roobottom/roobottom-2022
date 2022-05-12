@@ -9,6 +9,41 @@
     padding-left: var(--space-xl);
     padding-right: var(--space-xl);
   }
+
+  //articles
+  &--article {
+    footer,
+    article {
+      margin-top: var(--space-l);
+    }
+    @media screen and (min-width: 1088px) {
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "content aside"
+        "content footer";
+      grid-template-rows: auto auto 1fr;
+      grid-template-columns: 1fr 13.75rem;
+      column-gap: var(--space-m);
+      header {
+        grid-area: header;
+      }
+      article {
+        grid-area: content;
+        margin-top: 0;
+        grid-column: 1 / span 2; //subgrid
+      }
+      aside {
+        grid-area: aside;
+        position: -webkit-sticky;
+        position: sticky;
+      }
+      footer {
+        margin-top: var(--space-s);
+        grid-area: footer;
+      }
+    }
+  }
 }
 
 #container {

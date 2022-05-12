@@ -3,10 +3,10 @@
   font-size: var(--step--1);
   display: flex;
   flex-wrap: wrap;
+  #type.family.alt;
 
   dt {
     font-weight: bold;
-    #type.family.headline;
   }
 
   a {
@@ -15,7 +15,10 @@
 
   &-item:not(:last-child) {
     margin-right: var(--space-m);
-    margin-bottom: var(--space-s);
+  }
+
+  &-item:not(:first-child):not(:only-of-type) {
+    margin-top: var(--space-s);
   }
 
 }
@@ -23,9 +26,6 @@
 @media @bp[max] {
   .meta {
     display: block;
-    float: right;
-    margin-left: var(--space-m);
-    max-width: unit((220/@base),rem);
 
     &-item:not(:last-child) {
       margin-right: 0;
