@@ -36,7 +36,7 @@ container_type: 'article'
   {{ content | safe }}
 </article>
 
-<footer class="after">
+<footer>
 {% set prevPost = collections.articles | getNextCollectionItem(page) %}
 {% set nextPost = collections.articles | getPreviousCollectionItem(page)  %}
 

@@ -1,5 +1,5 @@
 ---
-container_type: 'diary-item'
+container_type: 'article'
 ---
 {% extends './_wrapper.njk' %}
 {% from '../includes/meta.njk' import meta as meta %}
@@ -50,17 +50,8 @@ container_type: 'diary-item'
   ]
 }) }}
 </aside>
-<article class="prose prose--flow">
-  {{ content | safe }}
-  {% for image in photo %}
-    {% set imageUrl %}{% if image.url | first != '/' %}/{% endif %}{{ image .url }}{% endset %}
-    {% figure imageUrl, image.alt %}
-  {% endfor %}
-</article>
-
-<footer>
+<aside>
 {{ meta({
-  classes: 'space--margin-bottom-s',
   items: [
     {
       key: 'Kid’s ages',
@@ -68,10 +59,19 @@ container_type: 'diary-item'
     }
   ]
 }) }}
-
+</aside>
+</footer>
+<article class="prose prose--flow">
+  {{ content | safe }}
+  {% for image in photo %}
+    {% set imageUrl %}{% if image.url | first != '/' %}/{% endif %}{{ image .url }}{% endset %}
+    {% figure imageUrl, image.alt %}
+  {% endfor %}
+</article>
 {% set prevPost = collections.diary | getNextCollectionItem(page) %}
 {% set nextPost = collections.diary | getPreviousCollectionItem(page)  %}
 
+<footer>
 {{ prevNext({
   label: 'Navigate between diary posts',
   prev: {

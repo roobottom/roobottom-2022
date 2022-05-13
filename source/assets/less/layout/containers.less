@@ -10,57 +10,36 @@
     padding-right: var(--space-xl);
   }
 
-  //diary items and articles
-  @breakpoint: 1088px;
-  &--article,
-  &--diary-item {
-    footer,
-    article {
-      margin-top: var(--space-l);
-    }
-    @media screen and (min-width: @breakpoint) {
-      display: grid;
-      grid-template-columns: 1fr 13.75rem;
-      column-gap: var(--space-m);
-      header {
-        grid-area: header;
-      }
-      article {
-        grid-area: content;
-        margin-top: 0;
-        grid-column: 1 / span 2;
-      }
-      aside {
-        grid-area: aside;
-      }
-      footer {
-        grid-area: footer;
-      }
-    }
-  }
-
-  &--diary-item {
-    @media screen and (min-width: @breakpoint) {
-      grid-template-areas:
-        "header header"
-        "content aside"
-        "content footer";
-      grid-template-rows: auto auto 1fr;
-      footer {
-        margin-top: var(--space-s);
-      }
-    }
-  }
-
   &--article {
-    @media screen and (min-width: @breakpoint) {
-      grid-template-areas: 
-        "header header"
-        "content aside"
-        "footer footer"
+    display: flex;
+    flex-direction: column;
+
+    article {
+      margin: var(--space-m) 0;
+    }
+
+    aside:not(:first-of-type) {
+      order: 1;
     }
     footer {
-      margin-top: var(--space-xl);
+      order: 2;
+    }
+  }
+
+  @media screen and (min-width:1100px) {
+    &--article {
+      display: block;
+      article {
+        margin: 0;
+      }
+      aside {
+        float: right;
+        max-width: 13.75rem;
+        clear: right;
+      }
+      aside+aside {
+        margin-top: var(--space-xs);
+      }
     }
   }
 }
