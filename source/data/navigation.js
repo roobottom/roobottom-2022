@@ -32,6 +32,18 @@ module.exports = {
     }, {
       url: 'https://twitter.com/roobottom',
       title: 'Twitter'
+    }, {
+      url: 'https://micro.blog/roobottom',
+      title: 'Micro Blog'
+    }
+  ],
+  consume: [
+    {
+      url: '/feed.xml',
+      title: 'RSS Feed'
+    }, {
+      url: '/feed.json',
+      title: 'JSON Feed'
     }
   ]
 }

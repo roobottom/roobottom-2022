@@ -42,7 +42,8 @@ class Feed {
         title: item.data.title,
         description: item.templateContent + postImages,
         guid: formatDate(item.date, 'YYYY-MM-DD-') + item.fileSlug,
-        date: formatDate(item.date, 'ddd, DD MMM YYYY HH:mm:ss ZZ')
+        date: formatDate(item.date, 'ddd, DD MMM YYYY HH:mm:ss ZZ'),
+        url: `${site_url}${item.url}`
       })
     }
 
