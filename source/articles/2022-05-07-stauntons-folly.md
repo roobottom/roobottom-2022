@@ -4,7 +4,6 @@ date: 2022-05-07
 tags:
 	- the past
 summary: "An unexpected piece of history in Hampshire’s beautiful Staunton Park."
-featured: true
 cover: /assets/images/articles/stauntons-folly/cover.jpeg
 coverAlt: A view of the mansion house at Staunton Park pre 1950
 ---
