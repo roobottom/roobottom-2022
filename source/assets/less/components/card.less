@@ -49,9 +49,14 @@
   }
 
   &-title,
-  &-date {
+  &-date,
+  &-meta {
     padding: var(--step-0);
     line-height: var(--line-height);
+  }
+
+  &-meta {
+    margin-top: calc(-2 * var(--step-0));
   }
 
   &-title {
@@ -60,10 +65,14 @@
     font-weight: normal;
   }
 
-  &-date {
-    font-size: var(--step--1);
-    margin-top: auto;
+  &-date,
+  &-meta {
     color: var(--c-grey-dark);
+    font-size: var(--step--1);
+  }
+
+  &-date {
+    margin-top: auto;
   }
 
   &-badge {
