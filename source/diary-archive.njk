@@ -19,39 +19,32 @@ breadcrumbs:
 {% from './includes/summary.njk' import summary as summary %}
 {% from './includes/prevNext.njk' import prevNext as prevNext %}
 
-{% for day in monthYear.days %}
-<h2 class="h4">{{ day | date('dddd D MMMM YYYY') }}</h2>
-<ul class="list list--timeline">
-  {% for item in monthYear.posts %}
-  {% if item.date | date('YYYY-MM-DD') == day %}
-  
-  {% set postContent %}
-    {{ item.templateContent | safe }}
-    <div class="mini-gallery">
-    {% for image in item.data.photo %}
-      {% img image.url, { alt: image.alt } %}
-    {% endfor %}
-    </div>
-  {% endset %}
-  
-  <li class="list-item">
-    {{ summary({
-      content: {
-        html: item.templateContent | safe
-      } if not item.templateContent == '',
-      date: {
-        datetime: '<span class="visually-hidden">' + item.date | date('dddd D MMMM YYYY [at]') + '</span>' + item.date | date('h:mm a'),
-        url: item.url
-      },
-      images: {
-        object: item.data.photo
-      }
-    }) }}
-  </li>
-  {% endif %}
+<ul class="list list--grid">
+  {% for post in monthYear.posts %}
+    {# set post title, depending on if this post has an image #}
+    {% if post.data.photo %}{% set title = post.data.title | safe %}
+    {% else %}{% set title = post.templateContent | safe | truncate %}{% endif %}
+
+    {# set the cover, if there is one #}
+    {% set cover = null %}
+    {% if post.data.cover %}{% set cover = post.data.cover %}
+    {% elif post.data.photo %}{% set cover = post.data.photo[0].url %}{% endif %}
+
+    {# set the badge content, if there's more than one photo #}
+    {% set badge = null %}
+    {% if post.data.photo | length > 1 %}{% set badge = post.data.photo | length + ' photos' %}{% endif %}
+    <li class="list-item">
+      {{ card({
+        title: title,
+        url: post.url,
+        cover: cover,
+        date: post.date | date('dddd D MMMM YYYY [at] h:mm a'),
+        badge: badge
+      }) }}
+    </li>
   {% endfor %}
 </ul>
-{% endfor %}
+{# {% endfor %} #}
 
 {{ prevNext({
   label: 'Navigate forwards or backwards in time',

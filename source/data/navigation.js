@@ -27,14 +27,11 @@ module.exports = {
   ],
   elsewhere: [
     {
-      url: 'https://github.com',
+      url: 'https://github.com/roobottom',
       title: 'Github'
     }, {
       url: 'https://twitter.com/roobottom',
       title: 'Twitter'
-    }, {
-      url: 'https://micro.blog/roobottom',
-      title: 'Micro Blog'
     }
   ],
   consume: [

@@ -4,7 +4,7 @@ container_type: 'article'
 {% extends './_wrapper.njk' %}
 {% from '../includes/meta.njk' import meta as meta %}
 {% from '../includes/subjects.njk' import subjects as subjects %}
-{% from '../includes/breadcrumbs.njk' import breadcrumbs as breadcrumbsList %}
+{% from '../includes/breadcrumbs.njk' import breadcrumbs as breadcrumbs %}
 {% from '../includes/prevNext.njk' import prevNext as prevNext %}
 
 {% macro age(dob, date, label, emoji) %}
@@ -32,9 +32,18 @@ container_type: 'article'
 
 {% block content %}
 <header>
-{{ breadcrumbsList({
+{{ breadcrumbs({
   classes: 'space--margin-bottom-s',
-  items: breadcrumbs
+  items: [{
+    title: 'Home',
+    url: '/'
+  }, {
+    title: 'Diary',
+    url: '/diary/'
+  }, {
+    title: date | date('MMMM YYYY'),
+    url: '/diary/' + date | date('MMMM-YYYY') | lower + '/'
+  }]
 }) }}
 </header>
 <aside>
