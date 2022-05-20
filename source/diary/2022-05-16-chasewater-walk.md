@@ -2,6 +2,7 @@
 summary: Another walk around Brownhills.
 tags:
 	- brownhills
+  - the past
 date: 2022-05-18T19:31:00+01:00
 photo:
   - url: /assets/images/diary/2022/2022-05-18-loaders.jpeg
