@@ -6,6 +6,7 @@ container_type: 'article'
 {% from '../includes/subjects.njk' import subjects as subjects %}
 {% from '../includes/breadcrumbs.njk' import breadcrumbs as breadcrumbs %}
 {% from '../includes/prevNext.njk' import prevNext as prevNext %}
+{% from '../includes/card.njk' import card as card %}
 
 {% macro age(dob, date, label, emoji) %}
   {% set days_old = date | dateDiff(dob) %}
@@ -101,4 +102,32 @@ container_type: 'article'
   } if nextPost
 }) }}
 </footer>
+{# related content #}
+{% set hasRelatedContent = false %}
+{% for post in collections.posts %}
+{% if post.data.tags | compareArray(tags) > 0 %}{% set hasRelatedContent = true %}{% endif %}
+{% endfor %}
+
+{% if hasRelatedContent %}
+<div class="space--margin-top-l">
+  <h2 class="space--margin-bottom-s">Releated content</h2>
+  <ul class="list list--grid">
+  {% set count = 0 %}
+  {% for post in collections.posts %}
+  {% if post.data.tags | compareArray(tags) > 0 and post.url != page.url and count < 3 %}
+    <li>
+    {{ card({
+      title: post.data.title | safe,
+      url: post.url,
+      cover: post.data.cover or post.data.photo[0].url,
+      date: post.date | date('dddd D MMMM YYYY [at] h:mm a'),
+      badge: post.data.photo | length + ' images' if post.data.photo | length > 1
+    }) }}
+    {% set count = count + 1 %}
+    </li>
+  {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
 {% endblock %}

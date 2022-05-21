@@ -43,6 +43,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("transform", require('./lib/filters/image-transform.js'))
   eleventyConfig.addFilter("numberToWords", require('./lib/filters/number-to-words.js'))
   eleventyConfig.addFilter("basename", require('./lib/filters/basename.js'))
+  eleventyConfig.addFilter("compareArray", require('./lib/filters/compare-array.js'))
 
   //shortcodes (AKA components) used in Nunjucks and Markdown
   eleventyConfig.addShortcode("figure", require('./lib/shortcodes/figure.js'))
@@ -52,6 +53,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("tags", require('./lib/collections/tags.js'))
   eleventyConfig.addCollection("articles", require('./lib/collections/articles.js'))
   eleventyConfig.addCollection("diary", require('./lib/collections/diary.js'))
+  eleventyConfig.addCollection("posts", require('./lib/collections/posts.js')) //articles AND diary posts
 
   //archive helper collections
   eleventyConfig.addCollection("years", require('./lib/collections/years.js'))
