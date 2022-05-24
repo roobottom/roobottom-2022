@@ -43,7 +43,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("transform", require('./lib/filters/image-transform.js'))
   eleventyConfig.addFilter("numberToWords", require('./lib/filters/number-to-words.js'))
   eleventyConfig.addFilter("basename", require('./lib/filters/basename.js'))
-  eleventyConfig.addFilter("compareArray", require('./lib/filters/compare-array.js'))
+  eleventyConfig.addFilter("similarPosts", require('./lib/filters/similar-posts.js'))
 
   //shortcodes (AKA components) used in Nunjucks and Markdown
   eleventyConfig.addShortcode("figure", require('./lib/shortcodes/figure.js'))

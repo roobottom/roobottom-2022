@@ -7,6 +7,7 @@ container_type: 'article'
 {% from '../includes/title.njk' import title as pagetitle %}
 {% from '../includes/breadcrumbs.njk' import breadcrumbs as breadcrumbsList %}
 {% from '../includes/prevNext.njk' import prevNext as prevNext %}
+{% from '../includes/card.njk' import card as card %}
 
 {% block content %}
 <header>
@@ -59,5 +60,33 @@ container_type: 'article'
     date: nextPost.date | date('dddd D MMMM YYYY')
   } if nextPost
 }) }}
+
+{% set similarPosts = collections.posts | similarPosts(page.inputPath, tags) %}
+{% if similarPosts %}
+<nav class="space--margin-top-l" aria-labelledby="similar-posts">
+  <h2 id="similar-posts" class="space--margin-bottom-s">You might also like</h2>
+  <ul class="list list--grid">
+  {% for post in similarPosts.slice(0,3) %}
+  {% set dateFormat = 'dddd D MMMM YYYY [at] h:mm a' %}
+  {% if post.data.section_id == 'articles' %}{% set dateFormat = 'dddd D MMMM YYYY' %}{% endif %}
+  <li>
+    {{ card({
+      title: post.data.title | safe,
+      url: post.url,
+      cover: post.data.cover or post.data.photo[0].url,
+      date: post.date | date(dateFormat),
+      badge: post.data.photo | length + ' images' if post.data.photo | length > 1,
+      meta: [
+        {
+          key: 'Posted in',
+          value: post.data.section_id | title
+        }
+      ]
+    }) }}
+  </li>
+  {% endfor %}
+  </ul>
+</nav>
+{% endif %}
 </footer>
 {% endblock %}
