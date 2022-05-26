@@ -156,7 +156,7 @@ container_type: 'article'
 
 {# related content #}
 {% set similarPosts = collections.posts | similarPosts(page.inputPath, tags) %}
-{% if similarPosts %}
+{% if similarPosts | length > 0 %}
 <nav class="space--margin-top-l" aria-labelledby="similar-posts">
   <h2 id="similar-posts" class="space--margin-bottom-s">You might also like</h2>
   <ul class="list list--grid">
