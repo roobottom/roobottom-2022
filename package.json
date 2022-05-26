@@ -5,16 +5,17 @@
   "main": "index.js",
   "scripts": {
     "watch:eleventy": "npx @11ty/eleventy --serve --quiet --incremental",
-    "watch:less": "npx gulp default",
-    "start": "npm run watch:eleventy & npm run watch:less",
+    "watch:assets": "npx gulp default",
+    "start": "npm run watch:eleventy & npm run watch:assets",
     "build:eleventy": "npx @11ty/eleventy",
-    "build:less": "npx gulp build",
-    "build": "npm run build:eleventy && npm run build:less"
+    "build:assets": "npx gulp build",
+    "build": "npm run build:eleventy && npm run build:assets"
   },
   "author": "Jon Roobottom",
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy-fetch": "^3.0.0",
     "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
     "dotenv": "^16.0.0",
@@ -31,6 +32,7 @@
     "markdown-it-div": "^1.1.0",
     "marked": "^4.0.12",
     "moment": "^2.29.1",
+    "netlify-plugin-cache": "^1.0.3",
     "number-to-words": "^1.2.4",
     "rss": "^1.2.2",
     "slugify": "^1.6.5",

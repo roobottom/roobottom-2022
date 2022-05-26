@@ -7,35 +7,13 @@
   gap: var(--space-m);
   margin-bottom: var(--space-l);
 
-  &:not(.list--grid):not(&--timeline) &-item:not(:last-child) {
+  &:not(&--grid) &-item:not(:last-child) {
     padding-bottom: var(--space-m);
     margin-bottom: var(--space-m);
-    &:not(:last-of-type) {
+    &:not(:last-of-type):not(&--no-border) {
       border-bottom: 1px solid var(--c-grey-x-light);
     }
     
-  }
-
-  &--timeline {
-    padding-bottom: var(--space-m);
-    padding-top: var(--space-s);
-    position: relative;
-    &:before {
-      content: "";
-      width: 1px;
-      height: 100%;
-      display: block;
-      background-color: var(--c-grey-light);
-      top: 0;
-      left: 10px;
-    }
-  }
-  &--timeline &-item {
-    border-left: 1px solid var(--c-grey-x-light);
-    padding-left: var(--space-xs);
-  }
-  &--timeline &-item+&-item {
-    padding-top: var(--space-m);
   }
 
 }

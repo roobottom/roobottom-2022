@@ -1,0 +1,25 @@
+.webmentions {
+  list-style: none;
+  &--likes,
+  &--reposts {
+    display: flex;
+    gap: var(--space-xs);
+  }
+}
+
+.like,
+.repost {
+  border: 1px solid var(--c-grey-dark);
+  display: block;
+  padding: 1px;
+
+  &:hover,
+  &:focus {
+    border-color: var(--c-link);
+    box-shadow: 0 0 0 3px var(--c-link);
+  }
+
+  img {
+    display: block;
+  }
+}
