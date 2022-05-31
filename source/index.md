@@ -3,7 +3,7 @@ title: Thanks for visiting my corner of the web
 layout: "home.njk"
 section_id: "home"
 ---
-Congratulations! You've found my personal website. How exciting! Herein, you'll find all kinds of rubbish I've written on subjects like {% for tag in collections.tags.slice(0,10) %}[{{ tag.title | title }}](/subjects/{{ tag.title | slugify }}/){% if loop.revindex > 2 %}, {% endif %}{% if loop.revindex == 2 %} and {% endif %}{% endfor %}.
+Congratulations! You've found my personal website. How exciting! Herein, you'll find all kinds of rubbish I've written on all kinds of [subjects](/subjects/).
 
 Over the last {{ collections.stats.allPosts.timespan }} I've written {{ collections.stats.allPosts.count }} posts; [{{ collections.stats.articles.count }} long-form articles](/articles/) and [{{ collections.stats.diaryPosts.count }} diary entries](/diary/).
 
