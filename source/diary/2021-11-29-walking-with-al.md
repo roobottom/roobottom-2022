@@ -3,7 +3,8 @@ date: 2021-11-29T15:11:20.236Z
 summary: Walking with Al
 tags:
   - friends
-  - littlehampton
+  - friends:podders
+  - beach:littlehampton
 photo:
   - url: /assets/images/diary/2021-11-29-hhhbk.jpg
     alt: Al taking photos on Littlehampton beach

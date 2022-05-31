@@ -2,6 +2,8 @@
 tags:
 - rootwo
 - roo
+- beach
+- beach:littlehampton 
 date: '2021-10-03'
 summary: A lazy Sunday morning
 photo:

@@ -6,6 +6,8 @@ tags:
   - rootwo
   - christmas
   - days out
+  - wetlands
+  - arundel
 photo:
   - url: /assets/images/diary/2021-12-11-IMG_1112.jpeg
     alt: Rootwo on the boat at the Wetlands

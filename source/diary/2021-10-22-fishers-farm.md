@@ -17,7 +17,6 @@ photo:
   alt: Roo relaxing on a beanbag in the neon-lit sensory room
 - alt: Rootwo smiles after sliding down a big blue slide
   url: "/assets/images/diary/2021-10-24-img_5057.jpeg"
-
 ---
 We had a lovely family day out at Fishers Farm. 
 

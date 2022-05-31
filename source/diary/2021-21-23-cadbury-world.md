@@ -5,7 +5,10 @@ tags:
   - roo
   - rootwo
   - family
+  - family:jon
   - days out
+  - mom
+  - dad
 photo:
   - url: /assets/images/diary/2021-12-23-IMG_1253.jpeg
     alt: Roo and Fredo the frog

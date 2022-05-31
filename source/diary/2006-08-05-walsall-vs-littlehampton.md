@@ -12,6 +12,7 @@ photo:
     alt: Me at the Komedia comedy club
 tags:
   - friends
+  - friends:walsall
   - littlehampton
 ---
 Worlds collided this weekend when a bunch of my Walsall mates took a trip down south to Littlehampton. We visited Brighton where we enjoyed the pier and later some live comedy at the Komedia. 

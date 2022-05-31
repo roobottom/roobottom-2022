@@ -5,6 +5,7 @@ tags:
   - roo
   - rootwo
   - days out
+  - drusillas
 photo:
   - url: /assets/images/diary/2021-01-04-IMG_5587.jpeg
     alt: Me and the kids on the Cheetah ride

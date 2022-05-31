@@ -2,8 +2,11 @@
 tags:
 - roo
 - holiday
+- days out
+- paultons park
+- peppa pig world
 date: '2021-08-24'
-summary: We went to Pepper Pig World
+summary: We went to Paultons Park
 photo:
 - url: "/assets/images/diary/2021-10-14-img_4608.jpeg"
   alt: Roo and Katie pose for a picture

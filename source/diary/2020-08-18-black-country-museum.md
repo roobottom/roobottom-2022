@@ -4,8 +4,12 @@ date: 2020-08-18
 tags:
   - days out
   - family
+  - family:jon
+  - mom
+  - dad
   - roo
   - rootwo
+  - the black country museum
 photo:
   - url: /assets/images/diary/2018-08-18-0f88160d7c.jpg
     alt: My mom and Roo

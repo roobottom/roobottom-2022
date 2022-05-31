@@ -3,7 +3,10 @@ tags:
 - roo
 - rootwo
 - family
+- family:jon
+- dad
 - christmas
+- katie
 summary: Christmas Day
 date: 2021-12-25T14:00:00Z
 photo:
@@ -13,7 +16,6 @@ photo:
   alt: My Dad is delighted with Roo’s school photo
 - url: "/assets/images/diary/2021-12-26-img_1355.jpeg"
   alt: 'Rootwo enjoying his Christmas dinner while Katie resizes his cracker hat. '
-
 ---
 What a difference a year makes. Last year we spent Christmas in lockdown. This year, mainly thanks to the vaccines, we were able to get together my my Mom and Dad. 
 

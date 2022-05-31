@@ -1,6 +1,6 @@
 ---
 tags:
-- littlehampton
+- beach:littlehampton
 - roo
 summary: A balmy day in January
 date: 2022-01-16T15:30:00Z

@@ -1,6 +1,7 @@
 ---
 tags:
 - dad
+- flying
 date: 2021-09-04
 summary: Me and my dad flew a virtual Boeing 747
 photo:

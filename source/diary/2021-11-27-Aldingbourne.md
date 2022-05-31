@@ -3,6 +3,7 @@ tags:
   - roo
   - rootwo
   - days out
+  - aldingbourne trust
 date: 2021-11-27
 summary: Aldingbourne trust
 photo:

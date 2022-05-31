@@ -3,6 +3,9 @@ tags:
 - friends
 - roo
 - rootwo
+- friends
+- friends:chatabators
+- new year
 summary: New Year's Day walk
 date: 2022-01-01T15:07:00Z
 photo:

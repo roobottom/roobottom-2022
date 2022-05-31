@@ -3,7 +3,7 @@ tags:
 - cycling
 - the new forest
 date: 2020-09-10
-summary: Gravel riding in the New Forest
+summary: Gravel riding in the New Forest, day one.
 photo:
 - url: "/assets/images/diary/2020-09-17-new-forest-day-one-4.jpg"
   alt: St John the Baptist church in Boldre

@@ -3,7 +3,7 @@ tags:
 - rootwo
 - birthday
 date: 2020-10-01
-summary: 'A year of Rootwo '
+summary: 'A year of Rootwo'
 photo:
 - url: "/assets/images/diary/2020-10-03-e7215639-ae19-44da-848e-eacda7f6fcf8.jpeg"
   alt: Roo opens Rootwo’s gifts as he looks on

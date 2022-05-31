@@ -2,8 +2,8 @@
 tags:
 - cycling
 - the new forest
-date: 2020-09-11
-summary: New Forest day two
+date: 2020-09-11T18:09:59+01:00
+summary: Gravel riding in the New Forest, day two.
 photo:
 - url: "/assets/images/diary/2020-09-17-new-forest-day-two-4.jpeg"
   alt: Paul next to the Portuguese Fireplace

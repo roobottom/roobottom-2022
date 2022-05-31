@@ -6,6 +6,8 @@ photo:
 date: 2021-11-21T22:00:00
 tags:
   - friends
+  - friends:podders
+  - games
 ---
 Tom, a fruity spring in his step, presented our steak and chips in the manner of an old-fashioned waiter in a Michelin Star restaurant. The meal was worth the wait, as was the company. Tom's delivery may have seemed ostentatious, but due his perfectly cooked meat, I thought him justified in the performance. Not one to be left on the fence, Luke had also provided a genuinely glorious peppercorn sauce. 
 

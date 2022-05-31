@@ -1,6 +1,6 @@
 ---
 tags:
-- littlehampton
+- beach:littlehampton
 date: 2020-09-21
 summary: Early morning walk
 photo:
