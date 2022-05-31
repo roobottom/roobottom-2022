@@ -4,10 +4,16 @@ layout: default
 navigation_id: subjects
 eleventyExcludeFromCollections: true
 ---
+{% set alphabet = collections.tags | alphabetFromTags %}
+{% for letter in alphabet %}
+<h2>{{ letter | upper }}</h2>
 <ul class="list list--grid">
   {% for tag in collections.tags %}
+    {% if tag.title | first | lower == letter | lower %}
     <li class="list-item prose">
       <p><a href="/subjects/{{ tag.title | slugify }}/">{{ tag.title | title }}</a><br>{{ tag.count }} {{ 'item' | plural(tag.count) }}</p>
     </li>
+    {% endif %}
   {% endfor %}
 </ul>
+{% endfor %}

@@ -1,3 +1,5 @@
+const _ = require('lodash')
+
 class Tags {
   
   data() {
@@ -9,7 +11,7 @@ class Tags {
 
   render({ collections: {tags} }) {
     const tagNames = tags.map(tag => tag.title)
-    return JSON.stringify(tagNames)
+    return JSON.stringify(_.sortedUniq(tagNames))
   }
  
 }

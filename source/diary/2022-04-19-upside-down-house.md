@@ -22,5 +22,6 @@ tags:
   - rootwo
   - days out
   - brighton
+  - birthday
 ---
 It's my birthday so Katie organised a day out in Brighton for all of us. This included a visit to the weird [upside-down house](https://upsidedownhouse.co.uk/). "You may feel a little dizzy" warned the lady who sold us the tickets. She wasn't wrong, Katie and I both felt a bit woozy as our brains struggled to make sense of our surroundings. Rootwo was especially cute trying and failing to walk in a straight line. Of course, the whole point in the upside-down house is to get some photos — hopefully we got a few good ones.
