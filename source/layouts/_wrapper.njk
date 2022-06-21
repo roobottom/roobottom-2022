@@ -56,6 +56,9 @@
         }) if og.date }}
     </head>
     <body class="no-js template-{{ section_id }}">
+        <nav class="accessibility-menu container">
+          <a href="#main">Skip to content</a>
+        </nav>
         <header class="container">
             <nav class="navigation{% if template == "home" or template == 'services' %} navigation--reverse{% endif %}" aria-label="Main">
             <a href="/" class="navigation__sitename" aria-labelledby="sitename">
@@ -68,7 +71,7 @@
             </ul>
             </nav>
         </header>
-        <main class="container{% if container_type %} container--{{ container_type }}{% endif %}">
+        <main class="container{% if container_type %} container--{{ container_type }}{% endif %}" id="main">
             {% block content %}
             {% endblock %}
         </main>
