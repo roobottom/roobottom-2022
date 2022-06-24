@@ -71,7 +71,7 @@
             </ul>
             </nav>
         </header>
-        <main class="container{% if container_type %} container--{{ container_type }}{% endif %}" id="main">
+        <main class="container {{ container_type }}" id="main">
             {% block content %}
             {% endblock %}
         </main>

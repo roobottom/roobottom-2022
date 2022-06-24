@@ -7,7 +7,7 @@
 {% endmacro %}
 
 {% macro prevNext(params) %}
-<nav class="prevNext" aria-label="{{ params.label }}">
+<nav class="prevNext {{ params.classes }}" aria-label="{{ params.label }}">
   <ol>
     {% if params.prev %}
       {{ item({

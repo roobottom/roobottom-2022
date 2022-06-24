@@ -10,7 +10,7 @@ container_type: 'article'
 {% from '../includes/card.njk' import card as card %}
 
 {% block content %}
-<header>
+<header class="article-header">
 {{ breadcrumbsList({
   classes: 'space--margin-bottom-s',
   items: breadcrumbs
@@ -20,7 +20,7 @@ container_type: 'article'
   text: title
 }) }}
 </header>
-<aside>
+<footer class="article-footer">
 {{ meta({
   items: [
     {
@@ -32,17 +32,17 @@ container_type: 'article'
     } if tags
   ]
 }) }}
-</aside>
-<article class="prose prose--flow">
+</footer>
+<div class="article-content prose prose--flow">
   {{ content | safe }}
-</article>
+</div>
 
-<footer>
 {% set prevPost = collections.articles | getNextCollectionItem(page) %}
 {% set nextPost = collections.articles | getPreviousCollectionItem(page)  %}
 
 {{ prevNext({
   label: 'Navigate between articles',
+  classes: 'article-prevNext',
   prev: {
     title: 'Previous article',
     url: {
@@ -61,62 +61,10 @@ container_type: 'article'
   } if nextPost
 }) }}
 
-{# webmentions #}
-{%- set postMentions = webmentions | webmentionsForPage(page.url) -%}
-{% if postMentions.likes | length > 0 or postMentions.comments | length > 0 or postMentions.reposts | length > 0 %}
-  <h2 class="space--margin-top-xl" id="responses">Responses</h2>
-
-  {# likes #}
-  {% if postMentions.likes | length > 0 %}
-  <h3 class="h4 space--margin-top-xs">{{ postMentions.likes | length }} {{ 'like' | plural(postMentions.likes | length) }}</h3>
-  <ol class="webmentions webmentions--likes space--margin-top-xs">
-    {% for like in postMentions.likes %}
-      <li>
-        <a href="{{ like.url }}" target="_blank" rel="external noopener noreferrer" class="like">
-          <img src="{{ like.photo }}" alt="{{ like.name }}" loading="lazy" decoding="async" width="48" height="48" title="View like from {{ like.name }}, opens in a new tab." />
-        </a>
-      </li>
-    {% endfor %}
-  </ol>
-  {% endif %}
-
-  {# reposts #}
-  {% if postMentions.reposts | length > 0 %}
-  {% set space = 'space--margin-top-xl' %}
-  {% if postMentions.likes | length == 0 %}{% set space = 'space--margin-top-xs' %}{% endif %}
-  <h3 class="h4 {{ space }}">{{ postMentions.reposts | length }} {{ 'repost' | plural(postMentions.reposts | length) }}</h3>
-  <ol class="webmentions webmentions--reposts space--margin-top-xs">
-    {% for repost in postMentions.reposts %}
-      <li>
-        <a href="{{ repost.url }}" target="_blank" rel="external noopener noreferrer" title="View repost from {{ repost.name }}, opens in a new tab." class="repost">
-          <img src="{{ repost.photo }}" alt="{{ repost.name }}" loading="lazy" decoding="async" width="48" height="48" />
-        </a>
-      </li>
-    {% endfor %}
-  </ol>
-  {% endif %}
-
-  {# comments #}
-  {% if postMentions.comments | length > 0 %}
-  {% set space = 'space--margin-top-xl' %}
-  {% if postMentions.likes | length == 0 and postMentions.reposts | length == 0  %}{% set space = 'space--margin-top-xs' %}{% endif %}
-  <h3 class="h4 {{ space }}">{{ postMentions.comments | length }} {{ 'comment' | plural(postMentions.comments | length) }}</h3>
-  {% for comment in postMentions.comments | reverse %}
-    <div class="comment space--margin-top-xs space--margin-bottom-m" id="comment-{{ comment['wm-id'] }}">
-        <div class="prose prose--flow comment-content">
-          <h4 class="h5 comment-title">On {{ comment.published  | date("dddd D MMMM YYYY [at] h:mm a") }} <a href="{{ comment.url }}" target="_blank" rel="external noopener noreferrer">{{ comment.author.name }} said</a>&hellip;</h4>
-          <p>{{ comment.content.value }}</p>
-        </div>
-      </div>
-  {% endfor %}
-  {% endif %}
-
-{% endif %}
-
 {# similar posts #}
 {%- set similarPosts = collections.posts | similarPosts(page.inputPath, tags) -%}
 {% if similarPosts | length > 0 %}
-<nav class="space--margin-top-l" aria-labelledby="similar-posts">
+<nav class="article-related" aria-labelledby="similar-posts">
   <h2 id="similar-posts" class="space--margin-bottom-s">You might also like</h2>
   <ul class="list list--grid">
   {% for post in similarPosts.slice(0,3) %}
