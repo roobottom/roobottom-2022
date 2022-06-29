@@ -18,7 +18,12 @@ introduction: A collection of short posts about the day-to-day life of my family
         url: item.url,
         cover: item.data.cover or cover,
         date: item.date | date('dddd D MMMM YYYY [at] h:mm a'),
-        badge: item.data.photo | length + ' images' if item.data.photo | length > 1
+        meta: [
+          {
+            key: 'Photo' | plural(item.data.photo | length),
+            value: item.data.photo | length
+          }
+        ]
       }) }}
     </li>
   {% endfor %}

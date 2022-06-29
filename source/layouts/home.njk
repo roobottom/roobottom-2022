@@ -18,6 +18,7 @@
           title: item.data.title,
           url: item.url,
           cover: item.data.cover,
+          summary: item.data.summary or item.templateContent | striptags | firstSentence,
           date: item.date | date('dddd D MMMM YYYY')
         }) }}
       </li>
@@ -39,7 +40,13 @@
         title: title,
         url: post.url,
         cover: item.data.cover or cover,
-        date: post.date | date('dddd D MMMM YYYY [at] h:mm a')
+        date: post.date | date('dddd D MMMM YYYY [at] h:mm a'),
+        meta: [
+          {
+            key: 'Photo' | plural(post.data.photo | length),
+            value: post.data.photo | length
+          }
+        ]
       }) }}
     </li>
   {% endfor %}

@@ -34,7 +34,7 @@
 
 #type {
     .style() {
-        .link(@color: var(--c-link), @focus: var(--c-link), @underline: none) {
+        .link(@color: var(--c-link), @focus: var(--c-link), @hover: var(--c-link-dark), @underline: none) {
             color: @color;
             text-decoration: @underline;
             padding: var(--space-xxs);
@@ -42,7 +42,7 @@
             &:hover {
                 text-decoration: underline;
                 text-decoration-thickness: 5px;
-                color: var(--c-link-dark);
+                color: @hover;
             }
             &:focus {
                 outline: 2px solid @focus;

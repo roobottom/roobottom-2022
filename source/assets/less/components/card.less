@@ -1,7 +1,7 @@
 .card {
   overflow: hidden;
   transition-property: margin, padding;
-  transition-duration: 0.25s;
+  transition-duration: 0.5s;
   position: relative; 
   background-color: white;
   color: black;
@@ -16,8 +16,6 @@
     margin-bottom: 0;
     background-size: cover;
     background-position: top center;
-    background-color: var(--c-pink);
-    //background-blend-mode: soft-light;
     background-image: var(--cover);
     min-height: 200px;
     max-height: 300px;
@@ -25,7 +23,6 @@
 
     display: flex;
     align-items: flex-end;
-    position: relative;
   }
 
   &:hover {
@@ -52,8 +49,9 @@
 
   &-title,
   &-date,
-  &-meta {
-    padding: var(--step-0);
+  &-meta,
+  &-summary {
+    padding: var(--space-s);
     line-height: var(--line-height);
   }
 
@@ -62,9 +60,24 @@
   }
 
   &-title {
-    #type.family.default;
-    font-size: var(--step-0);
+    font-size: var(--step-1);
     font-weight: normal;
+    padding-bottom: 0;
+  }
+
+  &-cover > &-title {
+    background-color: fade(black,50%);
+    background: linear-gradient(0deg, black 0%, fade(black, 0%) 100%);
+    padding: var(--space-xs) calc(2 * var(--space-s));
+    width: 100%;
+  }
+
+  &-cover &-link {
+    color: white;
+  }
+
+  &-summary {
+    font-size: var(--step--1);
   }
 
   &-date,
@@ -78,14 +91,31 @@
     margin-top: auto;
   }
 
-  &-badge {
-    position: absolute;
-    top: calc(var(--step-0) * 2);
-    right: calc(var(--step-0) * 2);
-    #type.family.alt;
-    font-size: var(--step--2);
-    padding: var(--space-xxs);
-    background-color: fade(white, 90%);
+  .colours(@colour, @var, @text) {
+    &--@{colour} {
+      background-color: @var;
+    }
+    // &--@{colour} &-link,
+    // &--@{colour} &-summary,
+    &--@{colour} &-date,
+    &--@{colour} &-meta {
+      color: black;
+    }
+    &--@{colour} &-cover &-link {
+      color: white;
+    }
+    &--@{colour} &-cover {
+      background-blend-mode: luminosity;
+      background-color: @var;
+    }
   }
+
+  .colours(yellow, var(--c-yellow-light), black);
+  .colours(orange, var(--c-orange-light), white);
+  .colours(blue, var(--c-blue-light), black);
+  .colours(pink, var(--c-pink-light), white);
+
+  
+  
 
 }

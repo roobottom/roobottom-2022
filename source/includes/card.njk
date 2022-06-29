@@ -2,12 +2,16 @@
 {% if url %}style="--cover: url('{{ url | transform('card') }}');"{% endif %}
 {% endmacro %}
 
+{% macro title(title, url) %}
+<h2 class="card-title"><a href="{{ url }}" class="card-link">{{ title }}</a></h2>
+{% endmacro %}
+
 {% macro date(date) %}
 {% if date %}<div class="card-date">{{ date }}</div>{% endif %}
 {% endmacro %}
 
-{% macro badge(content) %}
-{% if content %}<div class="card-badge" aria-hidden="true">{{ content }}</div>{% endif %}
+{% macro summary(summary) %}
+{% if summary %}<p class="card-summary">{{ summary }}</p>{% endif %}
 {% endmacro %}
 
 {% macro meta(items) %}
@@ -21,9 +25,15 @@
 {% endmacro %}
 
 {% macro card(params) %}
-<article class="card" {{ cover(params.cover) }}>
-  {% if params.cover %}<header class="card-cover">{{ badge(params.badge) }}</header>{% endif %}
-  <h2 class="card-title"><a href="{{ params.url }}" class="card-link">{{ params.title }}</a></h2>
+<article class="card {{ params.classes }}" {{ cover(params.cover) }}>
+  {% if params.cover %}
+  <header class="card-cover">
+    {{ title(params.title, params.url) }}
+  </header>
+  {% else %}
+  {{ title(params.title, params.url) }}
+  {% endif %}
+  {{ summary(params.summary) }}
   {{ date(params.date) }}
   {{ meta(params.meta) }}
 </article>

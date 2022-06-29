@@ -44,7 +44,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("numberToWords", require('./lib/filters/number-to-words.js'))
   eleventyConfig.addFilter("basename", require('./lib/filters/basename.js'))
   eleventyConfig.addFilter("similarPosts", require('./lib/filters/similar-posts.js'))
-  eleventyConfig.addFilter("webmentionsForPage", require('./lib/filters/webmentions-for-page.js'))
   eleventyConfig.addFilter("alphabetFromTags", require('./lib/filters/alphabet-from-tags.js'))
 
   //shortcodes (AKA components) used in Nunjucks and Markdown
