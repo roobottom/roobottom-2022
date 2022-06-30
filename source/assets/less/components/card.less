@@ -20,6 +20,8 @@
     min-height: 200px;
     max-height: 300px;
     height: 30vh;
+    background-blend-mode: luminosity;
+    background-color: black;
 
     display: flex;
     align-items: flex-end;
@@ -91,29 +93,20 @@
     margin-top: auto;
   }
 
-  .colours(@colour, @var, @text) {
+  .colours(@colour, @var) {
     &--@{colour} {
-      background-color: @var;
-    }
-    // &--@{colour} &-link,
-    // &--@{colour} &-summary,
-    &--@{colour} &-date,
-    &--@{colour} &-meta {
-      color: black;
-    }
-    &--@{colour} &-cover &-link {
-      color: white;
+      border-bottom: 6px solid @var;
     }
     &--@{colour} &-cover {
-      background-blend-mode: luminosity;
       background-color: @var;
     }
+      
   }
 
-  .colours(yellow, var(--c-yellow-light), black);
-  .colours(orange, var(--c-orange-light), white);
-  .colours(blue, var(--c-blue-light), black);
-  .colours(pink, var(--c-pink-light), white);
+  .colours(yellow, var(--c-yellow-light));
+  .colours(orange, var(--c-orange-light));
+  .colours(blue, var(--c-blue-light));
+  .colours(pink, var(--c-pink-light));
 
   
   

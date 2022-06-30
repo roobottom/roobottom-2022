@@ -11,6 +11,7 @@
   <p>My favorite long-form pieces.</p>
 </div>
 <ul class="list list--grid space--margin-top-m">
+  {% set colours = cycler('card--yellow', 'card--orange', 'card--blue', 'card--pink') %}
   {% for item in collections.articles %}
     {% if item.data.featured %}
       <li class="list-item">
@@ -19,7 +20,8 @@
           url: item.url,
           cover: item.data.cover,
           summary: item.data.summary or item.templateContent | striptags | firstSentence,
-          date: item.date | date('dddd D MMMM YYYY')
+          date: item.date | date('dddd D MMMM YYYY'),
+          classes: colours.next()
         }) }}
       </li>
     {% endif %}
@@ -41,6 +43,7 @@
         url: post.url,
         cover: item.data.cover or cover,
         date: post.date | date('dddd D MMMM YYYY [at] h:mm a'),
+        classes: colours.next(),
         meta: [
           {
             key: 'Photo' | plural(post.data.photo | length),
