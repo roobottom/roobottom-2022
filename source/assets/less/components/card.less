@@ -20,7 +20,6 @@
     min-height: 240px;
     max-height: 300px;
     height: 30vh;
-    background-blend-mode: luminosity;
     background-color: black;
 
     display: flex;
@@ -72,6 +71,11 @@
     background: linear-gradient(0deg, black 0%, fade(black, 0%) 100%);
     padding: var(--space-xs) calc(2 * var(--space-s));
     width: 100%;
+    #type.family.default;
+    font-weight: bold;
+    font-size: var(--step-2);
+    text-shadow: 3px 3px 6px fade(black, 50%);
+    line-height: var(--line-height--tight);
   }
 
   &-cover &-link {
@@ -95,11 +99,24 @@
 
   .colours(@colour, @var) {
     &--@{colour} {
-      border-bottom: 6px solid @var;
+      background-color: @var;
     }
-    // &--@{colour} &-cover {
-    //   background-color: @var;
-    // }
+    &--@{colour} &-cover {
+      background-blend-mode: luminosity;
+    }
+    &--@{colour} &-cover > &-title {
+      background-color: @var;
+      background: linear-gradient(0deg, @var 0%, transparent 100%);
+    }
+    &--@{colour} &-cover {
+      background-color: @var;
+    }
+    &--@{colour} &-title,
+    &--@{colour} &-date,
+    &--@{colour} &-meta,
+    &--@{colour} &-summary {
+      color: white;
+    }
       
   }
 

@@ -74,7 +74,7 @@
           <a href="#main">Skip to content</a>
         </nav>
         <header class="container">
-            <nav class="navigation{% if template == "home" or template == 'services' %} navigation--reverse{% endif %}" aria-label="Main">
+            <nav class="navigation{% if section_id == 'home' %} navigation--reverse{% endif %}" aria-label="Main">
             <a href="/" class="navigation__sitename" aria-labelledby="sitename">
                 Jon’s website <span class="visually-hidden">homepage</span>
             </a>
@@ -89,7 +89,7 @@
             {% block content %}
             {% endblock %}
         </main>
-        <footer class="container footer">
+        <footer class="container footer{% if section_id == 'home' %} footer--reverse{% endif %}">
             <div class="pattern">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1170 10" preserveAspectRatio="none" height="10px" width="100%" aria-hidden="true">
                     <path d="M0 0h117v10H0z" class="segment-1"/>

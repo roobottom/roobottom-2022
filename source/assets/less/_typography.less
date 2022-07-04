@@ -108,8 +108,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
-//global typographic settings
 
+//reverse style for direct use (eg, for standalone headings)
+.reverse {
+  color: white;
+}
+//global typographic settings
 body{
     font-size: var(--step-0);
     line-height: var(--line-height);
@@ -296,10 +300,11 @@ hr {
         }
     }
 
+    //on a dark background
     &--reverse {
         color: white;
         a:not(.button) {
-            #type.style.link(white,white); 
+            #type.style.link(white,white, white, underline); 
         }
         ul > li {
             list-style-image: ~"url(@{path-images}bullet-reverse.svg)"

@@ -14,6 +14,10 @@
         flex: 0;
     }
 
+    &--reverse &__sitename {
+      #type.style.link(white, white, white);
+    }
+
     li {
         list-style: none;
         margin-bottom: var(--space-xxs);
@@ -22,6 +26,10 @@
     &__items a {
         #type.style.link(black);
         padding: var(--space-xxs);
+    }
+
+    &--reverse &__items a {
+      #type.style.link(white, white, white);
     }
 
     .active {
