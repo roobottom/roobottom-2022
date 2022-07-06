@@ -1,0 +1,36 @@
+.site-header {
+
+  @media @bp[max] {
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0 20px fade(black,10%);
+  }
+
+  padding-bottom: var(--space-s);
+  #space > .range(margin-bottom, s, l);
+  z-index: 1;
+  background-color: white;
+  
+  &:before {
+    width: 100%;
+    display: block;
+    height: 10px;
+    top: 0;
+    content: "";
+    background: repeating-linear-gradient(
+      to right,
+      var(--c-theme-1),
+      var(--c-theme-1) 100px,
+      var(--c-theme-2) 99px,
+      var(--c-theme-2) 200px,
+      var(--c-theme-3) 199px,
+      var(--c-theme-3) 300px,
+    );
+  }
+  &--reverse {
+    background-color: var(--c-background-dark);
+    @media @bp[max] {
+      border: 1px solid fade(white, 5%);
+    }
+  }
+}

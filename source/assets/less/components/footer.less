@@ -1,4 +1,21 @@
 .footer {
+
+  &:before {
+    width: 100%;
+    display: block;
+    height: 4px;
+    top: 0;
+    content: "";
+    background: repeating-linear-gradient(
+      to right,
+      var(--c-theme-1),
+      var(--c-theme-1) 100px,
+      var(--c-theme-2) 99px,
+      var(--c-theme-2) 200px,
+      var(--c-theme-3) 199px,
+      var(--c-theme-3) 300px,
+    );
+  }
   
   margin-top: var(--space-xl);
   margin-bottom: var(--space-xl);
@@ -26,7 +43,6 @@
   a {
     #type.style.link(black, var(--c-link));
     padding: var(--space-xxs);
-    //#type.family.alt;
     font-size: var(--step--1);
   }
 
