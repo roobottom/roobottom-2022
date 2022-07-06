@@ -1,6 +1,9 @@
 .accessibility-menu {
   >a {
     #type.style.link;
+    display: inline-block;
+    margin-top: var(--space-s);
+    margin-bottom: var(--space-s);
     &:not(:focus){
       clip: rect(0 0 0 0);
       border: 0;
@@ -14,7 +17,12 @@
       width: 1px;
     }
   }
+  &--reverse {
+    background-color: var(--c-background-dark);
+  }
   &--reverse >a {
     #type.style.link(white, white, white);
+    margin-top: var(--space-s);
+    margin-bottom: var(--space-s);
   }
 }
