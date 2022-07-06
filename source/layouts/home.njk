@@ -1,56 +1,41 @@
 {% extends './_wrapper.njk' %}
 {% from '../includes/card.njk' import card as card %}
+{% set colours = cycler('theme-1', 'theme-2') %}
 
 {% block content %}
-<h1 class="h1-quiet">{{ title }}</h1>
+<h1>{{ title }}</h1>
 <div class="prose prose--reverse prose--flow space--margin-top-m">
 {{ content | safe }}
 </div>
-<div class="prose prose--flow space--margin-top-xxl">
-  <h2 id="featured-writing">Featured articles</h2>
-  <p>My favorite long-form pieces.</p>
-</div>
 <ul class="list list--grid space--margin-top-m">
-  {% set colours = cycler('card--yellow', 'card--orange', 'card--blue', 'card--pink') %}
-  {% for item in collections.articles %}
-    {% if item.data.featured %}
-      <li class="list-item">
-        {{ card({
+  {% for item in collections.articles.slice(0,6) %}
+    <li class="list-item">
+      {{ card({
           title: item.data.title,
           url: item.url,
           cover: item.data.cover,
           summary: item.data.summary or item.templateContent | striptags | firstSentence,
           date: item.date | date('dddd D MMMM YYYY'),
-          classes: colours.next()
+          classes: "card--" + colours.next()
         }) }}
-      </li>
-    {% endif %}
-  {% endfor %}
-</ul>
-
-<div class="prose prose--flow space--margin-top-xxl">
-  <h2 id="featured-writing">Recent diary posts</h2>
-  <p>Short posts about the day-to-day life of my family.</p>
-</div>
-<ul class="list list--grid space--margin-top-m">
-  {% for post in collections.diary.slice(0,3) %}
-    <li class="list-item">    
-      {% if post.data.photo %}{% set title = post.data.title %}
-      {% else %}{% set title = post.templateContent | safe | truncate %}{% endif %}
-      {% set cover %}{% if post.data.photo %}{% if post.data.photo[0].url | first != '/' %}/{% endif %}{{ post.data.photo[0].url }}{% endif %}{% endset %}
-      {{ card({
-        title: title,
-        url: post.url,
-        cover: item.data.cover or cover,
-        date: post.date | date('dddd D MMMM YYYY [at] h:mm a'),
-        classes: colours.next(),
-        meta: [
-          {
-            key: 'Photo' | plural(post.data.photo | length),
-            value: post.data.photo | length
-          }
-        ]
-      }) }}
+      {# <article class="teaser teaser--reverse teaser--{{ colours.next() }} {% if item.data.cover %}teaser--has-cover{% endif %}">
+        {% if item.data.cover %}
+        <figure class="teaser-cover">
+          <img src="{{ item.data.cover }}" alt="{{ item.data.coverAlt }}">
+        </figure>
+        {% endif %}
+        <div class="teaser-content">
+          <header class="teaser-header">
+            <h2><a href="{{ item.url }}" class="teaser-link">{{ item.data.title }}</a></h2>
+          </header>
+          <div class="teaser-summary prose">
+            <p>{{ item.data.summary or item.templateContent | striptags | firstSentence }}</p>
+          </div>
+          <footer class="teaser-footer">
+            <span class="teaser-date">{{ item.date | date('dddd D MMMM YYYY') }}</span>
+          </footer>
+        </div>
+      </article> #}
     </li>
   {% endfor %}
 </ul>
