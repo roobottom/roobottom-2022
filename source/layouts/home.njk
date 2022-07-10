@@ -1,14 +1,14 @@
 {% extends './_wrapper.njk' %}
 {% from '../includes/card.njk' import card as card %}
-{% set colours = cycler('theme-1', 'theme-2') %}
+{% set colours = cycler('theme-1', 'theme-2', 'theme-3', 'theme-4') %}
 
 {% block content %}
-<h1>{{ title }}</h1>
+<h1 class="prose--flow">{{ title }}</h1>
 <div class="prose prose--reverse prose--flow space--margin-top-m">
 {{ content | safe }}
 </div>
-<ul class="list list--grid space--margin-top-m">
-  {% for item in collections.articles.slice(0,6) %}
+<ul class="list list--grid-x2 space--margin-top-m">
+  {% for item in collections.articles %}{% if item.data.featured %}
     <li class="list-item">
       {{ card({
           title: item.data.title,
@@ -16,7 +16,7 @@
           cover: item.data.cover,
           summary: item.data.summary or item.templateContent | striptags | firstSentence,
           date: item.date | date('dddd D MMMM YYYY'),
-          classes: "card--" + colours.next()
+          classes: "card--large card--" + colours.next()
         }) }}
       {# <article class="teaser teaser--reverse teaser--{{ colours.next() }} {% if item.data.cover %}teaser--has-cover{% endif %}">
         {% if item.data.cover %}
@@ -37,6 +37,6 @@
         </div>
       </article> #}
     </li>
-  {% endfor %}
+  {% endif %}{% endfor %}
 </ul>
 {% endblock %}

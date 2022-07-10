@@ -1,5 +1,6 @@
-.grid-columns(@fitorfill:fill) {
-  grid-template-columns: repeat(~'auto-@{fitorfill}', minmax(unit((270/@base),rem), 1fr));
+.grid-columns(@fitorfill:fill, @min:270) {
+  display: grid;
+  grid-template-columns: repeat(~'auto-@{fitorfill}', minmax(unit((@min/@base),rem), 1fr));
 }
 
 .list {
@@ -7,7 +8,7 @@
   gap: var(--space-m);
   margin-bottom: var(--space-l);
 
-  &:not(&--grid) &-item:not(:last-child) {
+  &:not(&--grid):not(&--grid-x2) &-item:not(:last-child) {
     padding-bottom: var(--space-m);
     margin-bottom: var(--space-m);
     &:not(:last-of-type):not(&--no-border) {
@@ -22,11 +23,12 @@
 @media @bp[min] {
 
   .list--grid {
-    display: grid;
     .grid-columns;
   }
+  .list--grid-x2 {
+    .grid-columns(@min: 340);
+  }
   .list--grid-gallery {
-    display: grid;
     .grid-columns(fit);
   }
   .list--overlap .list-item:not(:first-child) {
