@@ -14,7 +14,7 @@
     }
 
     &--reverse &__sitename {
-      #type.style.link(white, white, white);
+      #type.style.link(white, white, white, none);
     }
 
     li {
@@ -23,12 +23,12 @@
     }
 
     &__items a {
-        #type.style.link(black);
+        #type.style.link(black, @underline: none);
         padding: var(--space-xxs);
     }
 
     &--reverse &__items a {
-      #type.style.link(white, white, white);
+      #type.style.link(white, white, white, none);
     }
 
     .active {
