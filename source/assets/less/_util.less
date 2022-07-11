@@ -7,3 +7,17 @@
   white-space: nowrap;  
   width: 1px;
 }
+
+.background-stripes(@angle) {
+  @background: repeating-linear-gradient(
+    @angle,
+    var(--c-theme-1),
+    var(--c-theme-1) 100px,
+    var(--c-theme-2) 99px,
+    var(--c-theme-2) 200px,
+    var(--c-theme-3) 199px,
+    var(--c-theme-3) 300px,
+    var(--c-theme-4) 299px,
+    var(--c-theme-4) 400px,
+  )
+}

@@ -104,42 +104,13 @@
     margin-top: auto;
   }
 
-  .colours(@colour, @var, @angle) {
-    &--@{colour} &-cover {
-      background-blend-mode: overlay;
-      //background-color: @var;
-      background:
-      repeating-linear-gradient(
-        45deg,
-        var(--c-theme-1),
-        var(--c-theme-1) 100px,
-        var(--c-theme-2) 99px,
-        var(--c-theme-2) 200px,
-        var(--c-theme-3) 199px,
-        var(--c-theme-3) 300px,
-        var(--c-theme-4) 299px,
-        var(--c-theme-4) 400px,
-      ),
-      repeating-linear-gradient(
-        135deg,
-        var(--c-theme-1),
-        var(--c-theme-1) 100px,
-        var(--c-theme-2) 99px,
-        var(--c-theme-2) 200px,
-        var(--c-theme-3) 199px,
-        var(--c-theme-3) 300px,
-        var(--c-theme-4) 299px,
-        var(--c-theme-4) 400px,
-      ),
-      var(--cover) top left no-repeat;
-      background-size: cover;
-    }
+  &--pattern &-cover {
+    background-blend-mode: overlay;
+    background:
+    .background-stripes(45deg)[@background],
+    .background-stripes(135deg)[@background],
+    var(--cover) top left no-repeat;
+    background-size: cover;
   }
-
-
-  .colours(theme-1, var(--c-theme-1), 45deg);
-  .colours(theme-2, var(--c-theme-2), 187deg);
-  .colours(theme-3, var(--c-theme-3), 75deg);
-  .colours(theme-4, var(--c-theme-4), 223deg);
 
 }
