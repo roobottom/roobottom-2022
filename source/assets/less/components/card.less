@@ -105,10 +105,12 @@
   }
 
   &--pattern &-cover {
-    background-blend-mode: overlay;
-    background:
-    .background-stripes(45deg)[@background],
-    .background-stripes(135deg)[@background],
+    background-blend-mode: color;
+    background: linear-gradient(
+      45deg,
+      var(--c-theme-2) 0%,
+      var(--c-theme-3) 100%
+    ),
     var(--cover) top left no-repeat;
     background-size: cover;
   }

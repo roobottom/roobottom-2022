@@ -2,8 +2,6 @@
 
   padding-bottom: var(--space-s);
   #space > .range(margin-bottom, s, l);
-  z-index: 1;
-  background-color: white;
   
   &:before {
     width: 100%;
@@ -13,11 +11,5 @@
     content: "";
     background: 
     .background-stripes(45deg)[@background];
-  }
-  &--reverse {
-    background-color: var(--c-background-dark);
-    @media @bp[max] {
-      //border: 1px solid fade(white, 5%);
-    }
   }
 }
