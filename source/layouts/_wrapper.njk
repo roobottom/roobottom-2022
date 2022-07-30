@@ -56,11 +56,11 @@
         }) if og.date }}
     </head>
     <body class="no-js template-{{ section_id }}">
-        <nav class="accessibility-menu {% if section_id == 'home' %} accessibility-menu--reverse{% endif %} container">
+        <nav class="accessibility-menu container">
           <a href="#main">Skip to content</a>
         </nav>
-        <header class="site-header {% if section_id == 'home' %} site-header--reverse{% endif %}">
-            <nav class="container navigation{% if section_id == 'home' %} navigation--reverse{% endif %}" aria-label="Main">
+        <header class="site-header">
+            <nav class="container navigation" aria-label="Main">
             <a href="/" class="navigation__sitename" aria-labelledby="sitename">
                 Jon’s website <span class="visually-hidden">homepage</span>
             </a>
@@ -75,7 +75,7 @@
             {% block content %}
             {% endblock %}
         </main>
-        <footer class="container footer{% if section_id == 'home' %} footer--reverse{% endif %}">
+        <footer class="container footer">
             <div class="footer-content">
                 <p>&copy; Jon Roobottom {{ collections.stats.allPosts.earliest | date('YYYY') }} to {{ collections.stats.allPosts.latest | date('YYYY') }}</p>
             </div>
@@ -97,7 +97,7 @@
                 }) }}</li>
             </ul>
         </footer>
-        <script src="{{ global.cdn }}prismjs@v1.x/components/prism-core.min.js"></script>
-	      <script src="{{ global.cdn }}prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
+        {# <script src="{{ global.cdn }}prismjs@v1.x/components/prism-core.min.js"></script>
+	      <script src="{{ global.cdn }}prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script> #}
     </body>
 </html>

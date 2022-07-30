@@ -4,6 +4,7 @@ const markdownItAttrs = require("markdown-it-attrs")
 const markdownItAnchor = require("markdown-it-anchor")
 const markdownItDiv = require("markdown-it-div")
 const markdownItAbbr = require("markdown-it-abbr")
+const markdownItFootnote = require("markdown-it-footnote")
 const moment = require("moment")
 const _ = require('lodash')
 
@@ -22,6 +23,7 @@ module.exports = function(eleventyConfig) {
             .use(markdownItAnchor)
             .use(markdownItDiv)
             .use(markdownItAbbr)
+            .use(markdownItFootnote)
 
   //11ty md eleventyConfig
   eleventyConfig.setLibrary("md", md)
